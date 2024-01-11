@@ -26,4 +26,9 @@
 
   **Les chemins vers la cyberdéfense**
 - Evolution de la pensée, de la maturité
-- 
+
+## La détection 
+**La détection dans la LID**
+- Anticiper : S'organiser, connaitre son env et ses ennemis
+- Détecter : Identifier malveillance, alerter 
+- Répondre : Analyser, traquer l'adversaire, comprendre, remédier
