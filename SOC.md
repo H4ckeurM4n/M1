@@ -21,6 +21,9 @@
 - Connaissance du terrain
 - Connaitre les individus
 
-  **Les fonfations pour défense un SI**
+  **Les fondations pour défense un SI**
 - Hygiène informatique : Formation users, documentations, 
+
+  **Les chemins vers la cyberdéfense**
+- Evolution de la pensée, de la maturité
 - 
