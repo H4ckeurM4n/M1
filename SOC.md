@@ -117,4 +117,8 @@ Des capacités au service d'intention qui cherchent à saisir des opportunités 
 
 ### Modèle Diamant
 - Autre modèle en CTI
-- Modèlise les relations entre l'attaquant, son infrastructure, ses capacités et sa victime 
+- Modèlise les relations entre l'attaquant, son infrastructure, ses capacités et sa victime
+
+  **Utilisation**
+- Incident peut être considéré comme terminé seulement si modèle diamnt des étapes 3-7 de la cyber kill chain sont remplis à 75%
+- Cette modélisatiob permet : Modéliser ce que l'on sait, surtout ce que l'on ne sait pas, ce qu'il reste à investiguer 
