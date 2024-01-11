@@ -48,3 +48,7 @@
 - Ressources humaines : Des hommes, compétences, des formations
 - Organisation : Des missions, des rôles et responsabilités...
 - Moyens techniques : Produire et collecter l'info, détecter, contextualiser, traiter, analyser, coordonner
+
+### Différents métiers 
+- Superviseur : Derrière les consoles, faire la primo analyse n1, h24
+- Centre Opérationnel : Prendre en compte l'alerte, et attribuer les moyens de la réponse
