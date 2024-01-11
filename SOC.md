@@ -1,12 +1,12 @@
 # SOC
 
 ## Présentation SOC
-**Particularités du Cyberespace**
+### Particularités du Cyberespace
 - Si en évolution perpetuelle et rapide : Faire vite et bien, nouvelle techno, obsolescence, vulnérabilités 
 - Perimètre protéiforme : Classification du SI, infogérance, emprises multiples
 > La défense du cyberespace c'est suivre, prendre en compte et s'adapter en permanence à toutes ces évolutions
 
-**Cheminement vers la cyberdéfense**
+### Cheminement vers la cyberdéfense
 - Cyberprotection > Management de la sécurité des SI > Cyberattaque
 
 ## Grands principes de la défense
@@ -17,14 +17,14 @@
 - Analyser l'information : Faire abstraction, pragmatisme, adaptation outils différents
 - Alerter et réagir
 
-  ### Les mêmes principes appliqués au cyberespace
+### Les mêmes principes appliqués au cyberespace
 - Connaissance du terrain
 - Connaitre les individus
 
-  ### Les fondations pour défense un SI
+### Les fondations pour défense un SI
 - Hygiène informatique : Formation users, documentations, 
 
-  ### Les chemins vers la cyberdéfense
+### Les chemins vers la cyberdéfense
 - Evolution de la pensée, de la maturité
 
 ## La détection 
