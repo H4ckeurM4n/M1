@@ -98,4 +98,4 @@ Prise en charge, contenu  > Qualifier, mesurer, prioriser     > Analyser, compre
 - Se préparer : Etendre et approfondir son périmètre de supervision
 - Détecter : Améliorer nos process
 - Réagir : S'entrainer
-- Crise : 
+- Crise 
