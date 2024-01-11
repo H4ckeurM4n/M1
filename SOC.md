@@ -9,6 +9,9 @@
 **Cheminement vers la cyberdéfense**
 - Cyberprotection > Management de la sécurité des SI > Cyberattaque
 
-## Grands principes du SOC
+## Grands principes de la défense
 - Connaitre son environnement : Avoir des plans à jour, données actualisées en temps réels
-- Identifier l'adversaire : Agents formés ? Script kiddies ? Adapter sa réponse 
+- Identifier l'adversaire : Agents formés ? Script kiddies ? Adapter sa réponse
+- Capter de l'information
+- Analyser l'information : Faire abstraction, pragmatisme, adaptation outils différents
+- Alerter et réagir
