@@ -69,3 +69,33 @@
 ### De l'alerte à l'incident
 Être notifie d'une alerte > Caractériser l'alerte en incident > Traiter l'incident
 Prise en charge, contenu  > Qualifier, mesurer, prioriser     > Analyser, comprendre, remédier, surveiller
+
+🟠 Etre notifié d'une alerte :
+
+- La prise en charge
+- Le contenu doit être précis et conscit
+  
+🟠 Caractériser l'alerte en incident :
+
+- Qualifier l'alerte
+- Mesurer le risque
+- Prioriser
+  
+🟠 Traiter l'incident :
+
+- Analyser
+- Comprendre
+- Remédier
+- Surveiller
+
+### Traiter l'incident 
+
+### Détection dans la réaction : surveiller l'ennemi 
+- Pendant le traitement de l'incident : Surveiller les agissement similaires, Identifier vecteurs
+- Après le traitement de l'incident : Surveiller les répliques, les résurgences
+
+### On continue et on fait mieux 
+- Se préparer : Etendre et approfondir son périmètre de supervision
+- Détecter : Améliorer nos process
+- Réagir : S'entrainer
+- Crise : 
