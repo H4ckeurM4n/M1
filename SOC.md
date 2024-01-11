@@ -99,3 +99,14 @@ Prise en charge, contenu  > Qualifier, mesurer, prioriser     > Analyser, compre
 - Détecter : Améliorer nos process
 - Réagir : S'entrainer
 - Crise 
+
+# De l'anticipation : La nécessaire connaissance de l'état de la menace
+
+## Le concept de la cybermenace 
+Des capacités au service d'intention qui cherchent à saisir des opportunités d'agir 
+
+| Capacité | Intentions || Opportunités |
+| --------- | --------- || --------- |
+| Cellule 1 | Gain financier || Cellule 2 |
+| Cellule 1 | Destabilisation || Cellule 2 |
+| Cellule 1 | Espionnage || Cellule 2 |
