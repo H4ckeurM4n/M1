@@ -100,7 +100,7 @@ Prise en charge, contenu  > Qualifier, mesurer, prioriser     > Analyser, compre
 - Réagir : S'entrainer
 - Crise 
 
-# De l'anticipation : La nécessaire connaissance de l'état de la menace
+# II - De l'anticipation : La nécessaire connaissance de l'état de la menace
 
 ## Le concept de la cybermenace 
 Des capacités au service d'intention qui cherchent à saisir des opportunités d'agir 
@@ -114,3 +114,7 @@ Des capacités au service d'intention qui cherchent à saisir des opportunités 
 ### Capacités : Une amélioration continue des attaquants 
 
 ### Intentions : Gain financier, espionnage, déstabilisation restent les principaux objectifs
+
+### Modèle Diamant
+- Autre modèle en CTI
+- Modèlise les relations entre l'attaquant, son infrastructure, ses capacités et sa victime 
