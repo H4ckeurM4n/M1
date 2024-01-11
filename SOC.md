@@ -38,8 +38,13 @@
 2. Identifier le risque : Potentielle, tentée, avérée
 3. Recherche : Traces, failles de sécurité
 
-### Etapes clefs
-1. Terrain à défendre
+## Etapes clefs
+1. Terrain à défendre : Pas qu'informatique, comprendre la finalité de l'entreprise
 2. Adversaire à contrer
 3. Objectif à atteindre
 4. Capacités à déployer
+
+### Déploiement de capacité
+- Ressources humaines : Des hommes, compétences, des formations
+- Organisation : Des missions, des rôles et responsabilités...
+- Moyens techniques : Produire et collecter l'info, détecter, contextualiser, traiter, analyser, coordonner
