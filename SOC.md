@@ -110,3 +110,7 @@ Des capacités au service d'intention qui cherchent à saisir des opportunités 
 | Cellule 1 | Gain financier | Techniques (failles) |
 | Cellule 1 | Destabilisation | Contextuelles |
 | Cellule 1 | Espionnage | Cellule 2 |
+
+### Capacités : Une amélioration continue des attaquants 
+
+### Intentions : Gain financier, espionnage, déstabilisation restent les principaux objectifs
