@@ -52,3 +52,16 @@
 ### Différents métiers 
 - Superviseur : Derrière les consoles, faire la primo analyse n1, h24
 - Centre Opérationnel : Prendre en compte l'alerte, et attribuer les moyens de la réponse
+- Expert réseau / système
+
+### Guides et référentiels de sécurité 
+- Guide d'hygiène de l'ANSSI
+- Prestataire  d’audit de la sécurité des systèmes d’information (PASSI)
+- Prestataires de détection d’incidents de sécurité (PDIS)
+- Prestataire de réponse aux incidents de sécurité (PRIS)
+
+### Obligations légales
+- RGPD : Protection des DCP
+- NIST SP-800-171
+- SOX : Bancaire
+- HIPAA : 
