@@ -236,3 +236,21 @@ Le SOC doit également avoir un accès à internet spécifique pour :
 - Réseaux internes de même niveau de sensibilité, de sensibilité différente
 - Systèmes assurant la distribution des réseaux locaux ou distants (fédérateurs, concentrateurs d'interconnexions...)
 - infrastructure de communication sans-fil (Wifi)
+
+**Socle numérique centralisé**
+- Services de type bastion d'admin ou de gestion des accès privilégiés
+- Infra de messagerie
+- Service d'antivirus
+
+**Terminaux**
+- Postes de travail des users ou opérateurs
+- Dédiés à l'administration des services et infrastructures
+- Stations blanches et points d'insertion et d'extraction de données
+- Objets connectés
+
+**Systèmes métiers**
+- Système de contrôle d'accès, CADIVS
+- Services Web
+
+## Définir ce que je veux / dois détecter
+
