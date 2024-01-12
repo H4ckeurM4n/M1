@@ -291,3 +291,21 @@ Le SOC doit également avoir un accès à internet spécifique pour :
 **2 - Les effets recherchés**
 
 **3 - Les priorités pour le risque systèmique**
+
+## Synthèse : 
+- Principaux défis
+  Maintenir référentiel de cyber, améliorer continuellement, documenter les approches
+
+# Règles de détection 
+## A propos des règles
+Une règle de détection doit être actionnabile (précise et réaliste)
+- Quel est l'objectif ? Quels sont les risques à couvrir ?
+- Quelles sont les sources d'informations nécessaires ?
+- Quelles sont les informations de contexte nécessaire pour la mise en oeuvre ?
+- Quelle est l'origine de la règle de détection ?
+- Que faire si la règle se déclenche ?
+- Quelle est la sévérité associée en fonction des actifs concernés ? 1337
+
+
+Après élimination des faux positifs, chaque règle de détection doit avoir une réponse associée en cas de déclenchement.
+Si aucune réponse n'est associée à l'alerte, elle n'a vraisemblablement pas de sens dans le contexte de l'organisation et consomme des ressources uniquement dans un but de statistiques.
