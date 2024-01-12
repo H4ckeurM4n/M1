@@ -306,6 +306,5 @@ Une règle de détection doit être actionnabile (précise et réaliste)
 - Que faire si la règle se déclenche ?
 - Quelle est la sévérité associée en fonction des actifs concernés ? 1337
 
-
 Après élimination des faux positifs, chaque règle de détection doit avoir une réponse associée en cas de déclenchement.
 Si aucune réponse n'est associée à l'alerte, elle n'a vraisemblablement pas de sens dans le contexte de l'organisation et consomme des ressources uniquement dans un but de statistiques.
