@@ -213,3 +213,11 @@ Le SOC doit également avoir un accès à internet spécifique pour :
 - Les investigations sensibles, afin de ne pas identifier votre entreprise
 - Il est nécessaire d'avoir une séparation physique
 
+## Approches opérationnelles 
+1. Analyse a posteriori : S'assurer des données collectées, savoir si l'on a été impacté par une alerte en cours.
+2. Recherche du signant : Adresse IP, Hash, User agent
+3. Exploiter les signaux forts : Fournis par nos équipements de sécu (Antivirus etc...)
+4. Identifier le "hors-normes"
+5. Corréler les signaux faibles
+6. Approches expérimentales
+
