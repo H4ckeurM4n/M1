@@ -221,3 +221,5 @@ Le SOC doit également avoir un accès à internet spécifique pour :
 5. Corréler les signaux faibles
 6. Approches expérimentales
 
+### Recherche de toutes traces d'une attaque
+- Outils utilisés, Escalade de privilège, Mouvement latéral, Mode de découverte, Mode d'exfiltration, Contrôle commande, Mécanisme de persistence, Contournement des défenses, Collecte d'information, 
