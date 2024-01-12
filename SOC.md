@@ -1,4 +1,4 @@
-# SOC
+# I - SOC
 
 ## Présentation SOC
 ### Particularités du Cyberespace
@@ -122,3 +122,18 @@ Des capacités au service d'intention qui cherchent à saisir des opportunités 
   **Utilisation**
 - Incident peut être considéré comme terminé seulement si modèle diamnt des étapes 3-7 de la cyber kill chain sont remplis à 75%
 - Cette modélisatiob permet : Modéliser ce que l'on sait, surtout ce que l'on ne sait pas, ce qu'il reste à investiguer 
+
+# III - Modélisation d'un SOC
+Entrée : Analyse de la menace : CTI & Donnée d'environnement : Données systèmee et donnée réseau > SOC > Sortie : Incidents identifiés / remédiés 
+
+## Actvités principales & auxiliaires du SOC 
+- Activités principales :
+-   Collecter de la donnée (QU'est-ce qui se passe sur mon réseau/système?)
+-   Détecter la donnée (Identifier items d'intérêts sur la donnée collectée)
+-   Trier les alertes (Prioriser et confirmer les alertes)
+-   Investiguer (Levée de doute ou escalade)
+-   Répondre (Répondre et minimiser les impacts
+- Activité auxiliaires :
+-   CTI : En collectant des info et de la donnée en vue d'améliorer la détection de l'attaque
+-   Forensics
+-   Amélioration continue : Pentest, revue des vuln
