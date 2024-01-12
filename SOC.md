@@ -222,4 +222,17 @@ Le SOC doit également avoir un accès à internet spécifique pour :
 6. Approches expérimentales
 
 ### Recherche de toutes traces d'une attaque
-- Outils utilisés, Escalade de privilège, Mouvement latéral, Mode de découverte, Mode d'exfiltration, Contrôle commande, Mécanisme de persistence, Contournement des défenses, Collecte d'information, 
+- Outils utilisés, Escalade de privilège, Mouvement latéral, Mode de découverte, Mode d'exfiltration, Contrôle commande, Mécanisme de persistence, Contournement des défenses, Collecte d'information
+
+### Les problématiques journaux 
+- Choisir points de collecte, Produire l'information, Comprendre le de contenu
+- identifier l'information utile, Collecter, Volumétrie
+- Stockage, Parsing
+
+# Définition du périmètre 
+## Services et infrastructures à surveiller (1/4)
+**Interconnexions réseaux**
+- Interco avec réseau internet, externes tels que partenaires et fournisseurs
+- Réseaux internes de même niveau de sensibilité, de sensibilité différente
+- Systèmes assurant la distribution des réseaux locaux ou distants (fédérateurs, concentrateurs d'interconnexions...)
+- infrastructure de communication sans-fil (Wifi)
