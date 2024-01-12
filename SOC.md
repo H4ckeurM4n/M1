@@ -166,10 +166,13 @@ Entrée : Alertes... > Tri > Sortie : Alertes priorisées
 - Responsable : Analystes SOC
 - Objectif : Accélérer et vérifier rapidement le contenu de l'alerte en tant que vrai ou faux positif
 
-### 5 -  
- Entrée :
-- Entrée : 
-- Sortie : 
-- Responsable : 
-- Objectif :
+### 5 - La réponse à incident 
+ Entrée : Alertes validées > Réponse à incident > Sortie : Remédiation réalisée / RETEX
+- Entrée : Incidents / attaques confirmés ou demande d'identification de faux positif (levée de doute)
+- Sortie : Remédiation réalisée / identification de faux positif / RETEX
+- Responsable : Analystes SOC
+- Objectif : Identifier les causes d'un incident / Réaliser une remédiation compléte et rapide 
 
+# Construction d'un SOC
+- SOC Large spectre
+- 
