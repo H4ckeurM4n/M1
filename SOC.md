@@ -254,3 +254,29 @@ Le SOC doit également avoir un accès à internet spécifique pour :
 
 ## Définir ce que je veux / dois détecter
 
+## Pour détecter une activité adverse 
+- Des capacités octroyées
+- Des moyens de détections mis en oeuvre
+⬇️
+- Peut-on répondre à ces questions ?
+
+## Besoin de définir un cadre 
+- Définir un référentiel
+- Définir les cibles à atteindre
+- Définir et prioriser
+- Permettre la construction d'un état de détectabilité
+
+## Démarche générale 
+
+## Définir périmètres d'action 
+- Interconnexions réseaux
+- Socles numériques centraux
+- Terminaux
+- Systèmes métiers
+
+## Définir les effets recherchés
+1. Produire de l'information d'intérêt cyber
+2. Détecter la menace connue 
+  Détection facile rapide, approche par marqueurs
+3. Rechercher des comportements révélateurs d'une attaque 
+  Être capable de correler différents événements (remonté par nos moyens, ou par antivirus...) 
