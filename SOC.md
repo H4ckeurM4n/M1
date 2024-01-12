@@ -190,5 +190,7 @@ N1 > N2 > N3
 
 ### Approche à plat 
 N1 / N2 / N3 > Analyste leader
-- Avantages :
-- Inconvénients : 
+- Avantages : Analystes plus heureux, travail varié et créatif, l'évolution pro n'est pas bloquée 
+- Inconvénients : Demande la désignation d'un responsable d'équipe, moins de process écrit
+
+## Internalisation ou externalisation 
