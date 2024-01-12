@@ -277,7 +277,7 @@ Le SOC doit également avoir un accès à internet spécifique pour :
 ## Définir les effets recherchés
 1. Produire de l'information d'intérêt cyber  
 2. Détecter la menace connue :  
-   Détection facile rapide, approche par marqueurs  
+     Détection facile rapide, approche par marqueurs  
 3. Rechercher des comportements révélateurs d'une attaque :  
-   Être capable de corréler différents événements (remonté par nos moyens, ou par antivirus...)
+     Être capable de corréler différents événements (remonté par nos moyens, ou par antivirus...)
 
