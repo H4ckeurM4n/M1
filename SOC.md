@@ -199,3 +199,17 @@ Prendre en compte le nombre d'users et de terminaux à gérer,
 ## Protection et sécurisation du SOC
 Référentiel ANSSI PDIS 
 II.2. Architecture du système d’information du service de détection
+
+-Il est également nécessaire de protéger le process de collecte de la donnée, il est ainsi nécessaire de chiffrer et d'authentifier les logs pendant le transfert
+
+-Séparer SI du SOC, et celui du SI de collecte 
+
+Si la taille de l'E, un SOC doit avoir une enclave dédiée pour : 
+- Analyser des machines
+- Les environnements de tests et les labs
+- Accéder aux systèmes et services spécifiques au SOC
+
+Le SOC doit également avoir un accès à internet spécifique pour : 
+- Les investigations sensibles, afin de ne pas identifier votre entreprise
+- Il est nécessaire d'avoir une séparation physique
+
