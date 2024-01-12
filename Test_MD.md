@@ -53,3 +53,8 @@ Entrée : Analyse de la menace : CTI & Donnée d'environnement : Données systè
     ### 1 - La collecte de la donnée 
     Entrée : Activité Système & Réseau > Collecte > Sortie : Evénements / télémetrie 
     -
+
+
+# Faire des formes 
+: _ "nom_formes..."
+🟢 :_circle 
