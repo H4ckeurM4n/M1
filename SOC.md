@@ -175,4 +175,20 @@ Entrée : Alertes... > Tri > Sortie : Alertes priorisées
 
 # Construction d'un SOC
 - SOC Large spectre
-- 
+- Le SOC large spectre
+- Le SOC condensé : Pour des entités plus grosses et importantes ou pour le secteur de la défense 
+- Le SOC centralisé : Est l'organisation la plus répandu et la moins mature
+- Petit SOC
+- SOC étendu : Le plus mature
+
+
+## 2 approches différentes 
+### Approche hierarchisée : 
+N1 > N2 > N3
+- Avantages : Process répétables ey duplicables, S
+- Inconvénients :
+
+### Approche à plat 
+N1 / N2 / N3 > Analyste leader
+- Avantages :
+- Inconvénients : 
