@@ -281,3 +281,5 @@ Le SOC doit également avoir un accès à internet spécifique pour :
 3. Rechercher des comportements révélateurs d'une attaque :  
      Être capable de corréler différents événements (remonté par nos moyens, ou par antivirus...)
 
+## Définir les priorités 
+
