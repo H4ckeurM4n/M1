@@ -194,3 +194,8 @@ N1 / N2 / N3 > Analyste leader
 - Inconvénients : Demande la désignation d'un responsable d'équipe, moins de process écrit
 
 ## Internalisation ou externalisation 
+Prendre en compte le nombre d'users et de terminaux à gérer, 
+
+## Protection et sécurisation du SOC
+Référentiel ANSSI PDIS 
+II.2. Architecture du système d’information du service de détection
