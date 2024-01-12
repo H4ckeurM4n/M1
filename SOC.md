@@ -194,15 +194,15 @@ N1 / N2 / N3 > Analyste leader
 - Inconvénients : Demande la désignation d'un responsable d'équipe, moins de process écrit
 
 ## Internalisation ou externalisation 
-Prendre en compte le nombre d'users et de terminaux à gérer, 
+Prendre en compte le nombre d'users et de terminaux à gérer
 
 ## Protection et sécurisation du SOC
 Référentiel ANSSI PDIS 
 II.2. Architecture du système d’information du service de détection
 
--Il est également nécessaire de protéger le process de collecte de la donnée, il est ainsi nécessaire de chiffrer et d'authentifier les logs pendant le transfert
+- Il est également nécessaire de protéger le process de collecte de la donnée, il est ainsi nécessaire de chiffrer et d'authentifier les logs pendant le transfert
 
--Séparer SI du SOC, et celui du SI de collecte 
+- Séparer SI du SOC, et celui du SI de collecte 
 
 Si la taille de l'E, un SOC doit avoir une enclave dédiée pour : 
 - Analyser des machines
