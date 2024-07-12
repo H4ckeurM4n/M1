@@ -79,3 +79,118 @@ Traitement des Risques (suite)
 - **Surveillance continue** : Renforcer la surveillance pour inclure les nouveaux risques identifiés.
 - **Audits réguliers** : Élaborer un calendrier d'audits pour vérifier la conformité aux nouvelles mesures de sécurité.
 - **Révision des risques** : Revoir et mettre à jour régulièrement l'analyse des risques pour inclure les nouvelles menaces et vulnérabilités identifiées.
+
+
+Identification des Risques
+
+1. **Divulgation non autorisée des données sensibles**
+   - **Description** : Risque que les documents imprimés contenant des données sensibles soient vus par des personnes non autorisées.
+   - **Actifs menacés** : Documents imprimés, données sensibles.
+
+2. **Perte ou vol des documents imprimés**
+   - **Description** : Risque que des documents sensibles soient oubliés sur l'imprimante ou volés.
+   - **Actifs menacés** : Documents imprimés, données sensibles.
+
+3. **Accès non autorisé aux imprimantes**
+   - **Description** : Risque que les imprimantes soient utilisées par des personnes non autorisées.
+   - **Actifs menacés** : Imprimantes, données transmises.
+
+4. **Attaques informatiques via les imprimantes**
+   - **Description** : Risque que les imprimantes soient ciblées par des cyberattaques.
+   - **Actifs menacés** : Imprimantes, données réseau.
+
+5. **Récupération des données stockées sur les imprimantes**
+   - **Description** : Risque que des données sensibles soient récupérées des mémoires internes des imprimantes.
+   - **Actifs menacés** : Données stockées.
+
+6. **Services ou protocoles non sécurisés actifs (SMB, FTP, etc.)**
+   - **Description** : Risque que des services ou protocoles non sécurisés soient actifs sur les imprimantes, exposant ainsi les données sensibles.
+   - **Actifs menacés** : Données en transit, sécurité réseau.
+
+7. **Scan-to-mail non sécurisé**
+   - **Description** : Risque que les documents sensibles scannés soient envoyés à des destinataires incorrects ou non autorisés.
+   - **Actifs menacés** : Données scannées, confidentialité des informations.
+
+8. **Branchement de clés USB**
+   - **Description** : Risque que des clés USB contenant des malware soient connectées aux imprimantes, compromettant ainsi la sécurité du réseau.
+   - **Actifs menacés** : Sécurité du réseau, intégrité des imprimantes.
+
+Traitement des Risques
+
+1. **Divulgation non autorisée des données sensibles**
+   - **Mesures** :
+     - Authentification sécurisée : Mise en place de badges ou de codes PIN pour libérer les impressions.
+     - Formation du personnel : Sensibilisation aux risques et aux bonnes pratiques.
+     - Emplacement sécurisé des imprimantes : Placer les imprimantes dans des zones contrôlées.
+
+2. **Perte ou vol des documents imprimés**
+   - **Mesures** :
+     - Utilisation de bacs de récupération sécurisés : Installer des bacs avec accès restreint.
+     - Politique de destruction des documents : Procédures de destruction sécurisée des documents non récupérés.
+
+3. **Accès non autorisé aux imprimantes**
+   - **Mesures** :
+     - Contrôle d'accès physique : Restreindre l'accès aux imprimantes aux seuls personnels autorisés.
+     - Surveillance des imprimantes : Utiliser des outils de suivi et d'audit pour surveiller l'utilisation.
+
+4. **Attaques informatiques via les imprimantes**
+   - **Mesures** :
+     - Mise à jour régulière des firmware : Assurer que toutes les imprimantes sont à jour avec les derniers correctifs.
+     - Segmentation du réseau : Placer les imprimantes sur un sous-réseau séparé pour limiter l'impact des attaques.
+
+5. **Récupération des données stockées sur les imprimantes**
+   - **Mesures** :
+     - Chiffrement des données : Assurer que les données stockées sont chiffrées.
+     - Politique de nettoyage des imprimantes : Configurer les imprimantes pour qu'elles ne stockent pas les documents après impression.
+
+6. **Services ou protocoles non sécurisés actifs (SMB, FTP, etc.)**
+   - **Mesures** :
+     - Désactivation des services inutiles : Désactiver les services et protocoles non utilisés ou non sécurisés.
+     - Configuration sécurisée : Configurer les services nécessaires avec des options de sécurité renforcées.
+
+7. **Scan-to-mail non sécurisé**
+   - **Mesures** :
+     - Authentification des destinataires : Mettre en place un système d'authentification pour vérifier les destinataires avant l'envoi.
+     - Journalisation des envois : Tenir un journal des documents envoyés via scan-to-mail pour audit et vérification.
+
+8. **Branchement de clés USB**
+   - **Mesures** :
+     - Désactivation des ports USB : Désactiver les ports USB des imprimantes si possible.
+     - Analyse antivirus : Mettre en place des systèmes d'analyse antivirus pour toute clé USB connectée.
+
+9. **Mise à jour automatique du firmware des imprimantes**
+   - **Mesures** :
+     - Activer la mise à jour automatique : Configurer les imprimantes pour recevoir et installer automatiquement les mises à jour de firmware.
+     - Notifications et contrôle : Mettre en place un système de notifications pour les mises à jour à venir et permettre une intervention manuelle si nécessaire.
+     - Chiffrement des mises à jour : Utiliser des canaux de communication chiffrés pour les mises à jour afin de prévenir toute interception ou altération.
+     - Backup et rollback : Avoir une sauvegarde de la version précédente du firmware et la capacité de revenir à cette version en cas de problème.
+
+10. **Chiffrement des données**
+    - **Mesures** :
+      - Utilisation de protocoles sécurisés : Utiliser des protocoles sécurisés comme HTTPS pour chiffrer les données en transit.
+      - Chiffrement des disques : Activer le chiffrement des disques pour les imprimantes avec stockage interne.
+      - Chiffrement réseau : Déployer des méthodes de chiffrement robustes comme les VPN pour sécuriser la communication entre les appareils et les imprimantes.
+
+11. **Modification des mots de passe par défaut**
+    - **Mesures** :
+      - Changement initial des mots de passe : Modifier les mots de passe par défaut immédiatement après le déploiement.
+      - Politique de mots de passe forts : Exiger l'utilisation de mots de passe forts incluant des lettres majuscules et minuscules, des chiffres et des caractères spéciaux.
+      - Mise à jour régulière : Mettre en place une politique de changement régulier des mots de passe.
+      - Stockage sécurisé des mots de passe : Utiliser des gestionnaires de mots de passe ou des méthodes sécurisées pour le stockage des mots de passe.
+
+12. **Nettoyage automatique des données**
+    - **Mesures** :
+      - Configuration de nettoyage automatique : Configurer les imprimantes pour supprimer automatiquement les données stockées après impression.
+      - Planification régulière : Mettre en place un calendrier de nettoyage régulier pour assurer que les données sensibles ne restent pas stockées.
+
+13. **Restriction de l'accès physique aux imprimantes**
+    - **Mesures** :
+      - Sécurisation de l'emplacement : Placer les imprimantes dans des zones sécurisées accessibles uniquement aux personnes autorisées.
+      - Contrôle d'accès : Utiliser des systèmes de contrôle d'accès comme des cartes d'identité pour limiter l'accès.
+      - Surveillance et audits : Installer des caméras de surveillance et réaliser des audits réguliers pour vérifier l'accès physique.
+
+#### Plan de Surveillance et Révision
+
+- **Surveillance continue** : Renforcer la surveillance pour inclure les nouveaux risques identifiés.
+- **Audits réguliers** : Élaborer un calendrier d'audits pour vérifier la conformité aux nouvelles mesures de sécurité.
+- **Révision des risques** : Revoir et mettre à jour régulièrement l'analyse des risques pour inclure les nouvelles menaces et vulnérabilités identifiées.
