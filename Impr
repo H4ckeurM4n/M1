@@ -1,0 +1,81 @@
+Identification des Risques (suite)
+
+6. **Risque de modification ou suppression non autorisée de documents**
+   - **Description** : Risque que des documents soient modifiés ou supprimés par des personnes non autorisées avant ou après l'impression.
+   - **Actifs menacés** : Documents électroniques et imprimés.
+
+7. **Risque de non-conformité aux politiques internes de sécurité**
+   - **Description** : Risque que l'utilisation des imprimantes ne respecte pas les politiques internes de l'entreprise en matière de sécurité des informations.
+   - **Actifs menacés** : Conformité réglementaire, image de l'entreprise.
+
+8. **Risque de surcharge des imprimantes**
+   - **Description** : Risque que les imprimantes soient surchargées, entraînant des pannes ou des interruptions de service.
+   - **Actifs menacés** : Disponibilité des services d'impression.
+
+9. **Risque de divulgation accidentelle via l'impression en réseau**
+   - **Description** : Risque que des documents sensibles soient envoyés par erreur à une imprimante partagée par d'autres départements ou utilisateurs.
+   - **Actifs menacés** : Documents imprimés, données sensibles.
+
+10. **Risque de perte de confidentialité due à la maintenance des imprimantes**
+    - **Description** : Risque que des données sensibles soient accessibles aux techniciens de maintenance des imprimantes.
+    - **Actifs menacés** : Données sensibles, documents imprimés.
+
+11. **Risque de services ou protocoles non sécurisés actifs (SMB, FTP, etc.)**
+    - **Description** : Risque que des services ou protocoles non sécurisés soient actifs sur les imprimantes, exposant ainsi les données sensibles.
+    - **Actifs menacés** : Données en transit, sécurité réseau.
+
+12. **Risque lié à la fonction de scan-to-mail**
+    - **Description** : Risque que les documents sensibles scannés soient envoyés à des destinataires incorrects ou non autorisés.
+    - **Actifs menacés** : Données scannées, confidentialité des informations.
+
+13. **Risque lié au branchement de clés USB**
+    - **Description** : Risque que des clés USB contenant des malware soient connectées aux imprimantes, compromettant ainsi la sécurité du réseau.
+    - **Actifs menacés** : Sécurité du réseau, intégrité des imprimantes.
+
+Traitement des Risques (suite)
+
+6. **Modification ou suppression non autorisée de documents**
+   - **Mesures** :
+     - Contrôle d'accès aux fichiers d'impression : Restreindre l'accès aux fichiers d'impression.
+     - Journaux d'audit : Utiliser des journaux pour suivre les modifications et suppressions de fichiers.
+
+7. **Non-conformité aux politiques internes de sécurité**
+   - **Mesures** :
+     - Vérification de conformité : Effectuer des audits réguliers pour vérifier la conformité aux politiques internes.
+     - Mise à jour des politiques : Réviser et mettre à jour régulièrement les politiques de sécurité pour inclure les imprimantes.
+
+8. **Surcharge des imprimantes**
+   - **Mesures** :
+     - Répartition de la charge : Distribuer les tâches d'impression entre plusieurs imprimantes pour éviter les surcharges.
+     - Surveillance des imprimantes : Utiliser des outils pour surveiller la charge de travail et anticiper les pannes.
+
+9. **Divulgation accidentelle via l'impression en réseau**
+   - **Mesures** :
+     - Paramètres de sécurité des imprimantes réseau : Configurer les imprimantes pour limiter les impressions par utilisateur ou département.
+     - Sensibilisation des utilisateurs : Former les employés sur les risques liés à l'impression en réseau et les bonnes pratiques.
+
+10. **Perte de confidentialité due à la maintenance des imprimantes**
+    - **Mesures** :
+      - Accord de confidentialité : Exiger des techniciens de maintenance de signer des accords de confidentialité.
+      - Effacement sécurisé : S'assurer que les données stockées sur les imprimantes sont effacées de manière sécurisée avant maintenance.
+
+11. **Services ou protocoles non sécurisés actifs (SMB, FTP, etc.)**
+    - **Mesures** :
+      - Désactivation des services inutiles : Désactiver les services et protocoles non utilisés ou non sécurisés.
+      - Configuration sécurisée : Configurer les services nécessaires avec des options de sécurité renforcées.
+
+12. **Scan-to-mail non sécurisé**
+    - **Mesures** :
+      - Authentification des destinataires : Mettre en place un système d'authentification pour vérifier les destinataires avant l'envoi.
+      - Journalisation des envois : Tenir un journal des documents envoyés via scan-to-mail pour audit et vérification.
+
+13. **Branchement de clés USB**
+    - **Mesures** :
+      - Désactivation des ports USB : Désactiver les ports USB des imprimantes si possible.
+      - Analyse antivirus : Mettre en place des systèmes d'analyse antivirus pour toute clé USB connectée.
+
+#### Plan de Surveillance et Révision (suite)
+
+- **Surveillance continue** : Renforcer la surveillance pour inclure les nouveaux risques identifiés.
+- **Audits réguliers** : Élaborer un calendrier d'audits pour vérifier la conformité aux nouvelles mesures de sécurité.
+- **Révision des risques** : Revoir et mettre à jour régulièrement l'analyse des risques pour inclure les nouvelles menaces et vulnérabilités identifiées.
