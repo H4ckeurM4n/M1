@@ -1,0 +1,20 @@
+Exactement, si **seul ton hôte physique** utilise un VPN et **pas tes VM**, alors que tu utilises le mode NAT ou le mode pont, le résultat sera effectivement similaire du point de vue de l’anonymisation externe. Voici pourquoi :
+
+### Mode NAT avec VPN sur l'hôte
+Dans ce mode, toutes les VM sont masquées derrière l'IP de l'hôte. Si l'hôte est connecté à un VPN, toutes les VM sortiront avec l'IP du VPN (celle de l'hôte). Les requêtes réseau des VM seront donc toutes associées à l'IP publique du VPN, et non à une IP propre à chaque VM.
+
+### Mode Pont avec VPN sur l'hôte
+Dans ce cas, bien que chaque VM ait une adresse IP distincte sur le réseau local, dès qu'elles sortent sur Internet, c'est l'IP de l'hôte (via le VPN) qui sera visible. Les VM, même si elles ont des IP distinctes sur le réseau local, apparaîtront sur Internet comme sortant toutes du VPN, avec la même IP publique.
+
+### Résumé du fonctionnement :
+- **VPN sur l'hôte avec NAT :** Tout le trafic réseau des VM passe par l'hôte et sort avec l'IP du VPN.
+- **VPN sur l'hôte avec pont :** Les VM ont des adresses IP distinctes sur le réseau local, mais dès qu'elles sortent sur Internet, c'est l'IP du VPN de l'hôte qui est utilisée.
+
+### Cas où les VM auraient des IP différentes
+Si tu veux que chaque VM ait une **IP publique distincte**, tu devras configurer chaque VM avec son propre VPN ou utiliser des proxys individuels pour chaque VM. Dans ce scénario :
+- Chaque VM utiliserait une IP distincte (celle fournie par le VPN ou le proxy).
+- Cela ajouterait un niveau de dissociation et d’anonymisation entre les différentes VM.
+
+En conclusion :
+- Si seul l'hôte utilise un VPN, qu'il soit en mode NAT ou pont, toutes les VM utiliseront la même IP (celle du VPN).
+- Si tu veux que chaque VM ait une IP différente en sortie, il faut configurer un VPN ou un proxy distinct pour chaque VM.
