@@ -1,0 +1,261 @@
+Voici un ensemble de règles pertinentes pour superviser efficacement un environnement constitué principalement de machines Windows. Ces règles sont conçues pour surveiller les événements critiques de sécurité et de fonctionnement dans les systèmes Windows, afin de détecter des comportements anormaux et des attaques potentielles.
+
+### 1. **Tentatives de connexion échouées (Logon Failure)**
+- **Description** : Surveille les tentatives de connexion échouées aux machines Windows.
+- **Source d’événement** : Event ID 4625 (échec d’ouverture de session).
+- **Condition** : `event.code: "4625"` ET `winlog.event_data.TargetUserName: "nom d'utilisateur"` (si tu veux suivre un compte spécifique) ou `source.ip`.
+- **Seuil** : Plus de 5 tentatives échouées en 5 minutes pour un même utilisateur ou depuis la même IP.
+- **Action** : Alerte e-mail et investigation manuelle.
+- **Utilité** : Surveille les tentatives de force brute sur des comptes utilisateur.
+
+---
+
+### 2. **Connexion réussie à un compte administrateur local**
+- **Description** : Détecte les connexions réussies à un compte administrateur local sur une machine Windows.
+- **Source d’événement** : Event ID 4624 (ouverture de session réussie) + `winlog.event_data.TargetUserName: "Administrator"`.
+- **Condition** : `event.code: "4624"` ET `winlog.event_data.TargetUserName: "Administrator"`.
+- **Seuil** : Déclencher une alerte à chaque occurrence.
+- **Action** : Notification e-mail et investigation.
+- **Utilité** : Surveille les connexions suspectes au compte administrateur local.
+
+---
+
+### 3. **Changement des groupes d'administration**
+- **Description** : Surveille les modifications des groupes d’administration (par exemple, ajout d’utilisateurs au groupe "Administrateurs").
+- **Source d’événement** : Event ID 4732 (ajout d’un utilisateur à un groupe de sécurité).
+- **Condition** : `event.code: "4732"` ET `winlog.event_data.TargetSid: "S-1-5-32-544"` (SID du groupe Administrateurs).
+- **Seuil** : Une alerte pour chaque ajout d’utilisateur.
+- **Action** : Alerte e-mail.
+- **Utilité** : Surveille l'escalade de privilèges et les modifications non autorisées dans les groupes de sécurité.
+
+---
+
+### 4. **Tentatives d'accès aux fichiers sensibles**
+- **Description** : Détecte des tentatives d’accès à des fichiers sensibles ou critiques (par exemple, `C:\Windows\System32` ou des fichiers de configuration).
+- **Source d’événement** : Event ID 4663 (tentative d'accès à un objet).
+- **Condition** : `event.code: "4663"` ET `winlog.event_data.ObjectName: "C:\Windows\System32\*"` ou tout autre répertoire sensible.
+- **Seuil** : Alerte immédiate pour toute tentative.
+- **Action** : Alerte et investigation.
+- **Utilité** : Surveille les accès aux fichiers système critiques pour identifier des modifications ou des actions malveillantes.
+
+---
+
+### 5. **Service démarré ou arrêté**
+- **Description** : Surveille les services critiques qui démarrent ou s’arrêtent de manière inattendue.
+- **Source d’événement** : Event ID 7045 (installation d'un nouveau service), Event ID 7036 (changement d’état d’un service).
+- **Condition** : `event.code: "7036"` ET `winlog.event_data.ServiceName: "nom du service"` pour les services critiques.
+- **Seuil** : Détecter toute modification inattendue des services critiques.
+- **Action** : Alerte pour chaque modification.
+- **Utilité** : Surveille les activités inhabituelles sur les services Windows, notamment les services malveillants.
+
+---
+
+### 6. **Modifications de politiques de sécurité locales**
+- **Description** : Détecte les modifications des stratégies de sécurité locales qui peuvent affecter la sécurité de la machine.
+- **Source d’événement** : Event ID 4719 (modification des paramètres de stratégie d’audit).
+- **Condition** : `event.code: "4719"`.
+- **Seuil** : Alerte immédiate pour toute modification.
+- **Action** : Alerte e-mail.
+- **Utilité** : Surveille les changements des paramètres de sécurité, qui peuvent indiquer une attaque en cours.
+
+---
+
+### 7. **Démarrage d'un processus suspect**
+- **Description** : Surveille l'exécution de processus inhabituels ou malveillants sur les machines Windows.
+- **Source d’événement** : Event ID 4688 (création d’un nouveau processus).
+- **Condition** : `event.code: "4688"` ET `winlog.event_data.NewProcessName: "nom_du_processus"` (tu peux suivre les processus malveillants spécifiques, comme `powershell.exe` ou `cmd.exe`).
+- **Seuil** : Alerte immédiate pour chaque processus suspect.
+- **Action** : Alerte e-mail et investigation manuelle.
+- **Utilité** : Surveille l'exécution de processus potentiellement dangereux, tels que des scripts malveillants ou des outils d’attaquants.
+
+---
+
+### 8. **Accès à distance (RDP) en dehors des heures de travail**
+- **Description** : Surveille les connexions à distance (RDP) en dehors des heures de travail normales.
+- **Source d’événement** : Event ID 4624 (ouverture de session réussie) + `logon.type: "10"` (session RDP).
+- **Condition** : `event.code: "4624"` ET `winlog.event_data.LogonType: "10"` ET `@timestamp` en dehors des heures de travail.
+- **Seuil** : Détecter toute connexion en dehors des heures de travail.
+- **Action** : Alerte e-mail.
+- **Utilité** : Surveille les connexions RDP inattendues, souvent liées à des attaques.
+
+---
+
+### 9. **Tentative d'élévation de privilèges**
+- **Description** : Détecte les tentatives d'élévation de privilèges, par exemple via des exploits ou des logiciels malveillants.
+- **Source d’événement** : Event ID 4673 (tentative d'utilisation de privilèges sensibles).
+- **Condition** : `event.code: "4673"`.
+- **Seuil** : Alerte pour chaque tentative.
+- **Action** : Notification e-mail et investigation.
+- **Utilité** : Surveille les tentatives d'exploitation pour escalader les privilèges d’un utilisateur.
+
+---
+
+### 10. **Blocage de comptes utilisateurs**
+- **Description** : Surveille les verrouillages de comptes utilisateurs après trop de tentatives de connexion échouées.
+- **Source d’événement** : Event ID 4740 (verrouillage de compte).
+- **Condition** : `event.code: "4740"`.
+- **Seuil** : Alerte immédiate pour chaque compte verrouillé.
+- **Action** : Alerte e-mail et suivi.
+- **Utilité** : Surveille les comptes potentiellement compromis ou les attaques par force brute.
+
+---
+
+### 11. **Accès à des partages réseau non autorisés**
+- **Description** : Détecte l’accès à des partages réseau qui ne devraient pas être utilisés par certains utilisateurs ou machines.
+- **Source d’événement** : Event ID 5140 (accès à un partage de fichiers).
+- **Condition** : `event.code: "5140"` ET `winlog.event_data.ShareName: "nom_du_partage"` ET `winlog.event_data.SubjectUserSid != "S-1-5-32-544"` (SID des administrateurs).
+- **Seuil** : Alerte pour chaque accès non autorisé.
+- **Action** : Alerte et investigation.
+- **Utilité** : Protège les partages réseau sensibles contre les accès non autorisés.
+
+---
+
+### 12. **Installation d’un logiciel non approuvé**
+- **Description** : Surveille l'installation de logiciels non approuvés ou malveillants sur les machines Windows.
+- **Source d’événement** : Event ID 11707 (installation réussie de programme MSI).
+- **Condition** : `event.code: "11707"` ET `winlog.event_data.ProductName` n'est pas dans la liste des logiciels approuvés.
+- **Seuil** : Alerte pour chaque installation non autorisée.
+- **Action** : Alerte et enquête.
+- **Utilité** : Surveille l'installation de logiciels malveillants ou non approuvés.
+
+---
+
+### Conclusion
+
+Ces règles sont spécifiquement adaptées à un environnement Windows. Elles permettent de superviser les connexions, les modifications de fichiers sensibles, les changements de privilèges, et les actions suspectes qui peuvent indiquer une tentative d’attaque ou une compromission. Tu peux personnaliser ces règles en fonction des besoins spécifiques de ton réseau Windows et des menaces que tu considères les plus importantes.
+
+Pour détecter des exfiltrations de données, que ce soit via des périphériques USB ou des flux réseau anormaux, il est important de définir des règles spécifiques qui surveillent les transferts de données à partir de machines Windows, ainsi que les actions suspectes liées aux périphériques USB. Voici des règles que tu peux implémenter pour surveiller ces scénarios.
+
+---
+
+### 1. **Insertion de clé USB et transfert de données (Exfiltration via USB)**
+- **Description** : Surveille l'insertion de périphériques USB et l'exfiltration de fichiers via ces périphériques.
+- **Source d’événement** : Event ID 4663 (tentative d’accès à un objet) et Event ID 6416 (connexion d’un périphérique de stockage amovible).
+- **Condition** :
+```bash
+event.code: "6416" AND event.code: "4663" AND winlog.event_data.ObjectName: "D:\\*"
+```
+- **Seuil** : Détecter toute écriture sur un périphérique amovible (ex. : `D:\\`) après l'insertion d’une clé USB.
+- **Action** : Alerte e-mail et blocage du périphérique (si possible).
+- **Utilité** : Surveille l'exfiltration de fichiers via des périphériques USB branchés à une machine.
+
+---
+
+### 2. **Transfert de fichiers volumineux via USB**
+- **Description** : Détecte des transferts de fichiers volumineux vers un périphérique USB, potentiellement signe d’exfiltration de données.
+- **Source d’événement** : Event ID 4663 (tentative d’accès à un objet).
+- **Condition** :
+```bash
+event.code: "4663" AND winlog.event_data.ObjectName: "D:\\*" AND network.bytes > 10000000
+```
+- **Seuil** : Plus de 10 Mo transférés vers une clé USB.
+- **Action** : Alerte e-mail et désactivation du périphérique USB (si possible).
+- **Utilité** : Surveille l'exfiltration de données volumineuses via des périphériques USB.
+
+---
+
+### 3. **Transfert massif de données via FTP ou SMB (exfiltration réseau)**
+- **Description** : Surveille l’utilisation de protocoles de partage de fichiers comme FTP ou SMB pour l'exfiltration de données en masse.
+- **Source d’événement** : Logs réseau (Packetbeat, NetFlow).
+- **Condition** :
+```bash
+network.protocol: ("ftp", "smb") AND network.bytes > 10000000
+```
+- **Seuil** : Plus de 10 Mo transférés via FTP ou SMB.
+- **Action** : Alerte e-mail et investigation.
+- **Utilité** : Détecte des transferts de fichiers volumineux via des protocoles de partage de fichiers, souvent utilisés pour exfiltrer des données.
+
+---
+
+### 4. **Détection de partage réseau anormalement élevé**
+- **Description** : Surveille un volume inhabituel de données transférées via un partage réseau (par exemple via SMB).
+- **Source d’événement** : Logs réseau ou logs Windows.
+- **Condition** :
+```bash
+network.protocol: "smb" AND network.bytes > 50000000
+```
+- **Seuil** : Plus de 50 Mo transférés en moins de 10 minutes via un partage réseau.
+- **Action** : Alerte e-mail et blocage du transfert (si possible).
+- **Utilité** : Surveille les transferts de fichiers excessifs sur les partages réseau, souvent indicatif d’une exfiltration de données.
+
+---
+
+### 5. **Transferts de données vers une IP externe non autorisée**
+- **Description** : Surveille les transferts de données massifs vers une adresse IP externe inhabituelle, indicatif d'une fuite de données.
+- **Source d’événement** : Logs réseau (NetFlow ou Packetbeat).
+- **Condition** :
+```bash
+destination.ip: NOT ("IP_autorisee_1", "IP_autorisee_2") AND network.bytes > 50000000
+```
+- **Seuil** : Plus de 50 Mo transférés vers une adresse IP externe non autorisée.
+- **Action** : Alerte e-mail et investigation manuelle.
+- **Utilité** : Protège contre les transferts de données vers des adresses IP externes non autorisées, souvent utilisés pour exfiltrer des données en dehors de l'entreprise.
+
+---
+
+### 6. **Utilisation d'un périphérique USB pendant des heures inhabituelles**
+- **Description** : Surveille l'utilisation des périphériques USB en dehors des heures de travail normales, indicatif d'une tentative d'exfiltration discrète.
+- **Source d’événement** : Event ID 6416 (connexion d’un périphérique de stockage amovible).
+- **Condition** :
+```bash
+event.code: "6416" AND @timestamp: > "18:00:00" AND @timestamp: < "08:00:00"
+```
+- **Seuil** : Alerte dès qu'un périphérique USB est inséré en dehors des heures de travail normales.
+- **Action** : Alerte e-mail et enquête.
+- **Utilité** : Protège contre les exfiltrations discrètes via des périphériques USB en dehors des heures de travail.
+
+---
+
+### 7. **Exfiltration de données via un protocole non standard**
+- **Description** : Surveille les transferts de données volumineux via des protocoles non standard, souvent utilisés par des attaquants pour éviter la détection.
+- **Source d’événement** : Logs réseau (Packetbeat ou NetFlow).
+- **Condition** :
+```bash
+network.protocol: NOT ("http", "https", "ftp", "smb") AND network.bytes > 50000000
+```
+- **Seuil** : Plus de 50 Mo transférés via un protocole non standard en une seule session.
+- **Action** : Alerte e-mail et enquête.
+- **Utilité** : Surveille les transferts de données via des protocoles inhabituels, souvent utilisés pour des exfiltrations discrètes.
+
+---
+
+### 8. **Écriture sur un périphérique USB non autorisé**
+- **Description** : Surveille les écritures de données sur des périphériques USB non approuvés (basé sur une liste blanche des périphériques autorisés).
+- **Source d’événement** : Event ID 4663 (tentative d’accès à un objet).
+- **Condition** :
+```bash
+event.code: "4663" AND winlog.event_data.DeviceID NOT IN ("USB1", "USB2")
+```
+- **Seuil** : Alerte dès qu’un périphérique USB non autorisé tente d’écrire des données.
+- **Action** : Alerte e-mail et blocage du périphérique.
+- **Utilité** : Protège contre l'exfiltration de données via des périphériques USB non autorisés.
+
+---
+
+### Conclusion
+
+Ces règles te permettent de surveiller à la fois l’exfiltration de données via des périphériques USB et des flux réseau anormaux. Elles sont conçues pour identifier les transferts de données volumineux ou inhabituels, qu'ils soient effectués par des utilisateurs malveillants ou via des outils d'exfiltration sophistiqués. En combinant la surveillance des périphériques USB et des flux réseau, tu seras mieux protégé contre les fuites de données.
+
+Pour détecter lorsqu'un support de stockage est branché dont le nom ne commence pas par "SEC", tu peux utiliser les événements Windows relatifs à l’insertion de périphériques USB (Event ID 6416 pour les périphériques de stockage amovibles).
+
+Voici la règle à utiliser dans Kibana pour détecter ces événements et filtrer sur le nom du support de stockage :
+
+### Détection de périphériques USB dont le nom ne commence pas par "SEC"
+
+- **Description** : Détecte l'insertion d'un support de stockage (clé USB, disque dur externe, etc.) dont le nom ne commence pas par "SEC".
+- **Source d’événement** : Event ID 6416 (connexion d’un périphérique de stockage amovible).
+- **Condition** :
+```bash
+event.code: "6416" AND NOT winlog.event_data.DeviceName: "SEC*"
+```
+- **Seuil** : Détecter toute insertion de support de stockage dont le nom ne commence pas par "SEC".
+- **Action** : Alerte e-mail et investigation.
+- **Utilité** : Protège contre l'utilisation de périphériques non approuvés ou non conformes aux politiques de sécurité.
+
+---
+
+### Explication :
+- **`event.code: "6416"`** : Cet événement Windows est généré lorsqu’un périphérique de stockage amovible (comme une clé USB) est branché.
+- **`NOT winlog.event_data.DeviceName: "SEC*"`** : Cette condition filtre les périphériques dont le nom **ne commence pas** par "SEC". Le `*` est un caractère générique qui permet de matcher tous les périphériques dont le nom commence par "SEC".
+  
+Cette règle te permettra de détecter l’insertion de tout périphérique de stockage non conforme à tes standards de nommage (nom ne commençant pas par "SEC"). Une alerte peut être envoyée pour initier une enquête ou bloquer l'utilisation de ce périphérique si possible.
