@@ -46,5 +46,13 @@ Question : Comment les cyberattaques visant les infrastructures critiques peuven
 -Forensic : Investigation post-incident dans des environnements critiques
 Question : Quelles sont les étapes et les outils essentiels pour mener une investigation forensic après un incident de sécurité dans une infrastructure critique, et comment garantir la préservation des preuves ?
 
+-Conception d’un plan de gestion de crise pour les infrastructures gouvernementales
+Question : Quelles sont les étapes pour élaborer un plan de gestion de crise cyber dans une organisation gouvernementale, et comment s'assurer que ce plan est adapté aux différentes situations de crise potentielle ?
 
-  
+-Mise en place d'une stratégie de reprise d’activité après une cyberattaque
+Question : Comment définir et déployer une stratégie de reprise d’activité après une cyberattaque majeure dans une organisation publique, et quels mécanismes de restauration des services critiques doivent être prioritaires ?
+
+-Gestion de crise cyber dans le secteur public
+Question : Comment préparer et coordonner une réponse efficace à une crise cyber dans une organisation publique, en mobilisant les ressources internes et externes et en suivant un cadre normatif adapté aux infrastructures sensibles ?
+
+-
