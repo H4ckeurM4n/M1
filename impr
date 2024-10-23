@@ -1,0 +1,7 @@
+Pour empêcher l'accès direct aux imprimantes via leur adresse IP, voici quelques propositions de configuration réseau au niveau du firewall :
+
+1. **Restreindre l'accès aux ports HTTP/HTTPS** : Tu peux bloquer les ports 80 (HTTP) et 443 (HTTPS) sur les adresses IP des imprimantes au niveau du firewall. Cela empêchera les utilisateurs d'accéder à l'interface web des imprimantes via un navigateur.
+
+2. **Filtrage IP** : Si l'accès aux imprimantes est nécessaire pour certains services ou administrateurs, configure des règles sur le firewall pour restreindre l'accès aux imprimantes uniquement à une plage d'adresses IP autorisées (comme celle des équipes d'administration ou des serveurs de gestion d'impression).
+
+3. **Segmentation réseau (VLAN)** : Tu pourrais isoler les imprimantes sur un réseau dédié (VLAN) et n'autoriser la communication avec ce VLAN qu'à partir de serveurs ou postes autorisés. Cela empêche tout accès depuis le réseau utilisateur classique.
