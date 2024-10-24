@@ -1,3 +1,5 @@
+- Pour un poste déjà installé, vous pouvez chiffrer les partitions sensibles comme **/home** et la **swap** en utilisant **LUKS** avec l'outil **cryptsetup**. Cela permet de sécuriser les données sans réinstaller le système, mais veillez à sauvegarder les informations avant toute modification. Toutefois, si une réinstallation est envisagée, il est conseillé de sauvegarder les données sur un support externe, puis de réinstaller le système en activant le chiffrement complet du disque dès l'installation, et de réinjecter les données une fois le poste sécurisé.
+
 Voici la version avec les solutions techniques :
 
 - Pour un poste déjà installé, vous pouvez chiffrer les partitions sensibles comme **/home** et la **swap**. Pour cela, utilisez **LUKS** pour configurer le chiffrement des partitions sans réinstaller le système. Il est important de démonter la partition, appliquer le chiffrement avec `cryptsetup luksFormat`, puis la remonter après avoir restauré les données sauvegardées.
