@@ -91,4 +91,49 @@ Fournir aux administrateurs les procédures et outils pour gérer les postes chi
 	•	Le chiffrement des postes Linux doit être réservé aux cas nécessaires et appliqué selon les directives pour minimiser les risques tout en préservant la disponibilité.
 	•	Une collaboration étroite entre l’équipe technique et le RSSI est essentielle pour garantir une mise en œuvre efficace et conforme.
 
-Ce plan est adapté à votre rôle de RSSI, tout en offrant une vision claire et orientée vers l’action pour une équipe technique d’administrateurs.
+Ce plan est adapté à votre rôle de RSSI, tout
+
+mVoici une version concise et directement axée sur les cas d’usages, adaptée pour une équipe technique :
+
+1. Objet de la directive
+
+Fournir les cas d’usages et les prérequis pour la mise en place du chiffrement des postes Linux, en tenant compte des contraintes de sécurité, des impacts sur la disponibilité et des besoins fonctionnels.
+
+2. Cas d’usage et prérequis
+
+2.1. Types de postes concernés
+
+	•	Postes fixes uniquement :
+Le chiffrement s’applique aux postes Linux fixes, en environnement contrôlé.
+Les postes portables sont exclus, conformément aux restrictions de l’environnement NP/DR.
+
+2.2. Utilisateurs concernés
+
+	•	Administrateurs uniquement :
+Les postes Linux sont réservés aux administrateurs système et réseau. Les utilisateurs standards n’ont pas d’accès à ce type de poste.
+
+2.3. Chiffrement et disponibilité
+
+	•	Risque de blocage :
+Le chiffrement peut rendre un poste inaccessible en cas de perte ou d’oubli des clés de chiffrement, impactant ainsi la continuité de service.
+	•	Clé de recouvrement obligatoire :
+Une clé de recouvrement doit être prévue pour chaque poste chiffré, avec stockage sécurisé dans un coffre-fort numérique.
+
+2.4. Nécessité et analyse fonctionnelle
+
+	•	Le chiffrement des postes n’est pas systématique. Il doit être réservé aux postes contenant des données sensibles ou critiques.
+	•	Une analyse des besoins fonctionnels est nécessaire pour évaluer l’impact du chiffrement sur la production et la disponibilité.
+
+3. Directives générales
+
+	1.	Identifier les postes Linux fixes contenant des données sensibles nécessitant un chiffrement.
+	2.	Prévoir une gestion rigoureuse des clés de chiffrement (génération, stockage, recouvrement).
+	3.	Documenter et valider les choix techniques avec une analyse des impacts sur la disponibilité.
+	4.	S’assurer que seuls les administrateurs ont accès à ces postes.
+
+4. Conclusion
+
+	•	Le chiffrement des postes Linux doit être justifié par un réel besoin de protection des données sensibles.
+	•	L’équipe technique est responsable de définir et de mettre en œuvre les solutions techniques en conformité avec ces directives.
+
+Cette structure va à l’essentiel en vous positionnant clairement comme RSSI qui fixe les cas d’usages, laissant l’équipe technique décider des modalités d’application.
