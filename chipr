@@ -1,0 +1,103 @@
+Directive relative au chiffrement des postes de travail Linux
+
+Introduction
+
+Le chiffrement des postes de travail est un élément clé de la stratégie de protection des données sensibles dans un environnement critique. Bien que déployés dans une enceinte sécurisée, les postes de travail Linux utilisés exclusivement par les administrateurs nécessitent des mesures adaptées pour garantir la confidentialité des données tout en tenant compte des contraintes opérationnelles. Cette directive définit les règles techniques applicables pour encadrer le chiffrement, la gestion des clés et les éventuelles exceptions.
+
+1. Objectif
+
+Cette directive vise à :
+
+	1.	Protéger la confidentialité des données sensibles en cas de vol ou de compromission.
+	2.	Répondre aux exigences légales et réglementaires en matière de gestion des clés de chiffrement.
+	3.	Encadrer les cas d’exemption tout en garantissant une sécurité adaptée à chaque situation.
+
+2. Champ d’application
+
+Cette directive s’applique :
+
+	•	Aux postes de travail Linux fixes, exclusivement utilisés par des administrateurs.
+	•	Aux postes situés dans des zones sécurisées, bénéficiant de contrôles d’accès physiques stricts.
+	•	Aux partitions contenant des données sensibles, comme les répertoires utilisateurs ou les journaux systèmes.
+
+Les postes portables et utilisateurs lambda sont exclus du périmètre.
+
+3. Exigences techniques
+
+3.1. Mise en œuvre du chiffrement
+
+	1.	Solution recommandée :
+	•	Utiliser LUKS/dm-crypt, faute de solutions labellisées ANSSI pour Linux.
+	•	Configuration minimale :
+	•	Algorithme de chiffrement : AES-256.
+	•	Partitions à chiffrer : /home, /var/log, /swap ou toute autre partition sensible identifiée.
+	•	Maintenir une documentation technique précisant la configuration appliquée.
+	2.	Postes devant être chiffrés :
+	•	Tous les postes Linux contenant des données sensibles.
+	•	Postes accédant à des ressources critiques nécessitant une protection renforcée.
+
+3.2. Gestion des clés
+
+	1.	Clé principale :
+	•	La clé principale doit être choisie par l’administrateur et respecter la politique interne de mots de passe robustes.
+	2.	Clé de recouvrement :
+	•	Une clé de recouvrement est obligatoire pour tous les postes chiffrés.
+	•	La clé de recouvrement doit être stockée :
+	•	Dans un coffre-fort physique sécurisé, ou
+	•	Dans un système HSM géré par le service de sécurité.
+	•	L’accès à la clé de recouvrement est soumis à une procédure stricte et doit être journalisé.
+	•	Utilisations autorisées :
+	•	Perte de la clé principale.
+	•	Exigences légales (réquisition judiciaire).
+	•	Besoin métier exceptionnel validé par le RSSI.
+	3.	Récupération :
+	•	Prévoir une procédure opérationnelle pour accéder à la clé de recouvrement afin de minimiser l’impact en cas de perte ou d’incident.
+
+3.3. Contraintes opérationnelles
+
+	•	Déchiffrement au redémarrage :
+	•	Le redémarrage d’un poste chiffré nécessite l’entrée manuelle de la clé de déchiffrement.
+	•	Cette mesure garantit la sécurité des données en cas d’interruption non planifiée ou de tentative d’accès physique.
+	•	Disponibilité :
+	•	Les postes critiques doivent intégrer des mécanismes permettant une récupération rapide (documentation des étapes de redémarrage, stockage sécurisé des clés de recouvrement).
+
+4. Exceptions et mesures compensatoires
+
+4.1. Cas d’exemption au chiffrement
+
+Les postes de travail Linux peuvent être exemptés de chiffrement dans les cas suivants :
+
+	•	Le poste n’héberge pas de données sensibles ou critiques.
+	•	Le chiffrement engendre une contrainte opérationnelle majeure justifiée.
+
+Ces exceptions doivent être :
+
+	1.	Justifiées par une analyse de risque réalisée par les équipes techniques.
+	2.	Validées par le RSSI.
+	3.	Documentées dans un registre dédié.
+
+4.2. Mesures compensatoires
+
+Pour les postes non chiffrés :
+
+	1.	Contrôles d’accès renforcés :
+	•	Limitation stricte des accès physiques à la zone où se trouvent les postes.
+	•	Utilisation de systèmes de verrouillage pour les disques.
+	2.	Centralisation des données sensibles :
+	•	Stocker toutes les données sensibles sur des serveurs sécurisés, en évitant tout stockage local.
+	3.	Suppression des données locales après usage :
+	•	Mettre en place des scripts ou des processus automatisés pour effacer les données temporaires ou sensibles.
+
+5. Responsabilités
+
+	•	Administrateurs techniques :
+	•	Mise en œuvre des configurations de chiffrement.
+	•	Gestion des clés principales et recouvrement.
+	•	Documentation des configurations appliquées.
+	•	RSSI :
+	•	Validation des exceptions au chiffrement.
+	•	Supervision de la conformité à la directive.
+
+6. Conclusion
+
+Cette directive établit les règles nécessaires pour protéger les postes Linux utilisés dans un environnement critique. Le chiffrement doit être priorisé pour les postes contenant des données sensibles, et des mécanismes de gestion des clés rigoureux doivent être appliqués. Les équipes techniques sont invitées à respecter scrupuleusement ces exigences pour garantir la sécurité et la résilience de l’infrastructure.
