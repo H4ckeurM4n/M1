@@ -1,0 +1,140 @@
+SQUELETTE COMPLET DE L’ÉTAT DE L’ART
+
+(Optimisé pour éviter les répétitions avec l’analyse des risques et les stratégies de sécurisation.)
+
+2. État de l’art : Panorama des systèmes d’information isolés
+
+2.1. Définitions et concepts fondamentaux
+
+2.1.1. Définition des systèmes d’information isolés
+	•	Principe général : séparation physique ou logique entre un SI et les réseaux externes.
+	•	Objectifs de l’isolement : protection des données sensibles, limitation des risques d’intrusion.
+	•	Terminologie et cadre de référence : air gap, enclaves sécurisées, isolation logique.
+
+2.1.2. Typologies des systèmes isolés
+	•	Isolation physique complète :
+	•	Déconnexion totale des réseaux externes (ex. systèmes nucléaires, défense).
+	•	Contraintes d’exploitation (mises à jour manuelles, maintenance complexe).
+	•	Air gap virtuel (isolation réseau) :
+	•	Réseaux distincts dans une même infrastructure (ex. segmentation en environnement industriel).
+	•	Cloisonnement logique sans coupure physique.
+	•	Isolation hybride et solutions alternatives :
+	•	Utilisation de diodes de données et de passerelles sécurisées pour limiter les échanges.
+	•	Zones de confiance avec accès contrôlé (ex. SCADA dans les systèmes industriels).
+
+2.1.3. Domaines d’application des systèmes isolés
+	•	Secteur militaire et défense : protection des données classifiées.
+	•	Industrie et SCADA : contrôle des infrastructures critiques.
+	•	Santé et services financiers : préservation des données personnelles et sensibles.
+	•	Recherche et laboratoires sensibles : gestion des secrets industriels et scientifiques.
+
+2.2. Contexte historique et évolution des cybermenaces
+
+(Panorama historique, sans entrer dans l’analyse détaillée des risques.)
+
+2.2.1. Origines et adoption des systèmes isolés
+	•	Contexte géopolitique et besoins stratégiques des premiers systèmes air gap.
+	•	Adoption dans les infrastructures critiques suite aux premières menaces informatiques.
+
+2.2.2. Évolution des cyberattaques visant les SI isolés
+	•	Apparition des attaques ciblant les environnements déconnectés.
+	•	Cas emblématiques :
+	•	Stuxnet (2010) : premier malware à compromettre un système air gap.
+	•	USB Thief, Ramsay (2020) : attaques via périphériques amovibles.
+	•	Opérations de cyberespionnage récentes (APT visant les infrastructures critiques).
+
+2.2.3. Techniques générales de contournement de l’isolation
+
+(Sans entrer dans l’analyse détaillée des menaces, traitée dans le chapitre Analyse des Risques.)
+	•	Exploitation des supports physiques : clés USB infectées, implants matériels.
+	•	Canaux cachés de fuite d’information :
+	•	Ondes électromagnétiques (AirHopper).
+	•	Signaux acoustiques et variations thermiques.
+	•	LED et transmissions optiques.
+	•	Compromission via la chaîne d’approvisionnement : équipements pré-infectés.
+
+2.3. Avantages et limites des systèmes isolés
+
+(Panorama des forces et faiblesses, sans analyse détaillée des vulnérabilités.)
+
+2.3.1. Avantages des SI isolés
+	•	Réduction de la surface d’attaque : pas d’accès direct à Internet.
+	•	Meilleure protection contre les cybermenaces externes.
+	•	Préservation de la confidentialité des données sensibles.
+
+2.3.2. Limites et défis liés aux SI isolés
+	•	Contraintes opérationnelles :
+	•	Maintenance et mises à jour complexes (besoin d’intervention physique).
+	•	Difficultés d’intégration dans des environnements modernes (interopérabilité).
+	•	Menaces internes et erreurs humaines :
+	•	Utilisation non contrôlée de supports amovibles.
+	•	Manque de sensibilisation des utilisateurs et risques liés aux prestataires.
+	•	Complexité de la supervision et de la détection d’incidents :
+	•	Absence de visibilité en temps réel.
+	•	Surveillance limitée aux journaux d’événements locaux.
+
+2.4. Cadres réglementaires et normatifs applicables aux SI isolés
+
+(Présentation des normes et réglementations, sans entrer dans les aspects opérationnels des stratégies de conformité.)
+
+2.4.1. Réglementation nationale et européenne
+	•	Directive NIS 2 : protection des infrastructures critiques et OSE/OIV.
+	•	Législation française :
+	•	LPM et réglementation des OIV (ANSSI).
+	•	Règlements d’exécution liés aux SI sensibles.
+
+2.4.2. Normes et standards de cybersécurité applicables
+	•	ISO 27001 : gestion de la sécurité des systèmes d’information.
+	•	ISO 22301 : continuité d’activité appliquée aux environnements critiques.
+	•	Normes spécifiques aux systèmes industriels (SCADA, OT).
+
+2.4.3. Exigences spécifiques aux SI isolés
+	•	Obligations de cloisonnement et de segmentation.
+	•	Contraintes sur les mises à jour et les transferts de données.
+	•	Supervision et détection d’incidents dans un environnement isolé.
+
+2.5. Identification des lacunes et opportunités d’amélioration
+
+(Préparer la transition vers l’analyse des risques et les stratégies de sécurisation.)
+
+2.5.1. Limitations des solutions actuelles
+	•	Efficacité des SI isolés contre les menaces modernes.
+	•	Difficulté d’intégration avec les nouvelles technologies de supervision et d’analyse.
+
+2.5.2. Défis liés à la supervision et à la détection des attaques
+	•	Absence de visibilité centralisée.
+	•	Limitations des mécanismes de journalisation.
+
+2.5.3. Opportunités d’amélioration et pistes de recherche
+	•	Utilisation des diodes de données pour les échanges sécurisés.
+	•	Supervision avancée basée sur l’intelligence artificielle et l’analyse comportementale.
+	•	Approches hybrides combinant isolation et monitoring sécurisé.
+
+🔗 Transition vers l’analyse des risques
+
+(Préparation du passage au chapitre suivant.)
+	•	Conclusion de l’état de l’art :
+	•	Si l’isolement reste une stratégie robuste, il est insuffisant face aux menaces internes et aux nouvelles techniques d’attaque.
+	•	L’évolution des cyberattaques nécessite une analyse détaillée des risques spécifiques aux environnements isolés.
+	•	Introduction à l’analyse des risques :
+	•	Quels sont les scénarios concrets de compromission d’un SI isolé ?
+	•	Quelles vulnérabilités sont les plus critiques ?
+	•	Comment évaluer l’impact des menaces sur ces infrastructures ?
+
+✅ Points forts de cette structure :
+
+✔ Évite les répétitions avec l’analyse des risques (traitement des menaces en surface ici, approfondissement dans le chapitre suivant).
+✔ Présente un panorama clair et structuré des SI isolés (historique, avantages, limites, cadre légal).
+✔ Prépare la suite du mémoire en introduisant les enjeux de sécurisation (transition vers les stratégies techniques et organisationnelles).
+
+💡 Prochaines étapes :
+
+Si cette structure te convient, je peux rédiger l’état de l’art complet en suivant ce plan détaillé ! 🚀
+
+2.1.1. Définition des systèmes d’information isolés
+
+Les systèmes d’information isolés, aussi appelés systèmes air gap, désignent des environnements informatiques déconnectés de tout réseau externe afin de réduire la surface d’attaque et protéger des données ou infrastructures critiques contre les cybermenaces. Cette isolation peut être mise en œuvre de manière physique, en s’assurant qu’aucune connexion matérielle ne relie ces systèmes à un réseau non sécurisé, ou logique, à travers des mécanismes de cloisonnement avancés restreignant strictement les échanges de données. Cette approche trouve son origine dans les impératifs de sécurité des secteurs où la confidentialité et l’intégrité des informations sont des enjeux primordiaux, notamment les infrastructures militaires, nucléaires, industrielles et les services essentiels comme la santé ou les réseaux financiers. L’objectif principal d’un système isolé est d’assurer une compartimentation stricte, empêchant les flux non autorisés et limitant ainsi les risques de compromission à grande échelle.
+
+Contrairement aux infrastructures informatiques classiques qui dépendent de connexions permanentes pour assurer leurs opérations et leur maintenance, les systèmes d’information isolés reposent sur un paradigme de contrôle absolu des échanges. Leur administration implique généralement des procédures rigoureuses pour le transfert de données, souvent restreint à des supports physiques sécurisés ou à des dispositifs filtrant strictement les informations autorisées à entrer ou sortir. Cette contrainte opérationnelle garantit une protection contre les menaces à distance, comme les cyberattaques menées via Internet, mais engendre également des défis en matière de gestion et de supervision, notamment pour la mise à jour des logiciels ou l’analyse des journaux d’activité. L’isolation ne signifie pas pour autant une absence totale d’interaction avec l’extérieur : des mécanismes tels que les diodes de données, permettant un transfert unidirectionnel sécurisé, sont parfois employés pour permettre une circulation limitée et contrôlée de l’information sans remettre en cause l’intégrité de l’isolement.
+
+La conception d’un système isolé repose donc sur un équilibre délicat entre sécurité et fonctionnalité, nécessitant une approche holistique intégrant à la fois des mesures techniques, telles que le cloisonnement réseau, le chiffrement des données ou le contrôle strict des supports amovibles, et des mesures organisationnelles, incluant des procédures de gestion des accès et des formations spécifiques pour les utilisateurs autorisés. Si cette approche renforce considérablement la résilience face aux cyberattaques, elle n’offre pas une protection absolue, notamment contre les menaces internes, les erreurs humaines ou les attaques exploitant des canaux cachés pour exfiltrer des données. Ainsi, bien que le principe d’isolation demeure une référence incontournable pour la protection des infrastructures critiques, son efficacité repose sur une supervision rigoureuse et une mise en œuvre adaptée aux contraintes opérationnelles du secteur concerné.
