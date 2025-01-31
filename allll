@@ -14,3 +14,10 @@ Bien cordialement,
 [Votre Nom]
 [Votre Fonction - RSSI]
 [Votre Organisation]
+
+Dans le cadre de l’investigation, nous avons suivi la démarche suivante :
+	1.	Récupération du numéro de série de la clé USB détectée : Extraction des métadonnées depuis les logs du SOC afin d’identifier le périphérique concerné.
+	2.	Recherche dans GLPI : Consultation de la base de gestion des actifs pour retrouver la clé USB associée et son historique d’utilisation.
+	3.	Identification du poste concerné : À partir des informations de GLPI, nous avons déterminé sur quel poste cette clé a été connectée.
+	4.	Identification de l’utilisateur : Grâce aux données d’inventaire, nous avons retrouvé l’agent utilisant ce poste et son service d’appartenance.
+	5.	Confirmation de la légitimité : Nous avons pris contact avec [Nom du service] pour valider que cette clé USB a bien été utilisée dans un cadre opérationnel et que l’alerte était liée à un fichier légitime
