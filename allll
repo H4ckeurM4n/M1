@@ -1,0 +1,16 @@
+Objet : Suivi de l’alerte SOC du 27/01
+
+Bonjour,
+
+Pour votre bonne information, nous avons traité l’alerte détectée par notre SOC en date du 27/01. Celle-ci concernait un fichier VMDK (Mireille-disk1.vmdk) contenant un script Python (base.py).
+
+Après échange avec [Nom du service], il s’avère que cette alerte fait suite à l’export d’une machine virtuelle contenant un script Python. Lors de l’analyse en station blanche, la détection du script a généré une alerte, le fichier ayant été identifié comme potentiellement suspicieux. Les agents ont procédé à la suppression du fichier, ont refait une analyse en station blanche, et aucune nouvelle alerte n’a été détectée, leur permettant ainsi de poursuivre leurs opérations normalement.
+
+Nous avons convenu avec [Nom du service] qu’à l’avenir, lorsqu’une alerte est générée par les stations blanches lors des analyses, ils nous en informeront systématiquement afin de permettre une première levée de doute rapide et efficace.
+
+N’hésitez pas à revenir vers nous si vous avez des questions.
+
+Bien cordialement,
+[Votre Nom]
+[Votre Fonction - RSSI]
+[Votre Organisation]
