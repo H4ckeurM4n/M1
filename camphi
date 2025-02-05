@@ -1,0 +1,105 @@
+Pour ta première campagne de phishing, voici plusieurs propositions de landing pages en fonction de ton objectif (sensibilisation, évaluation du risque, ou test plus poussé). L’approche dépend de l’effet recherché et de la politique de sensibilisation en place dans ton organisation.
+
+1. Page d’alerte immédiate
+
+Objectif : Sensibilisation simple et rapide, sans recueillir d’identifiants.
+Scénario : L’utilisateur clique sur le lien du mail et arrive immédiatement sur une page qui affiche un message d’alerte.
+
+Avantages :
+✅ Rapide à mettre en place.
+✅ Aucun risque de récupération involontaire d’identifiants.
+✅ Idéal pour une première sensibilisation.
+
+Exemple de message sur la page :
+
+	⚠️ ATTENTION : VOUS AVEZ CLIQUÉ SUR UN LIEN DE PHISHING !
+Ce type de lien peut compromettre vos informations personnelles et professionnelles.
+En entreprise, un simple clic peut causer une fuite de données ou permettre à un attaquant de s’infiltrer dans le réseau.
+Que faire maintenant ?
+		•	Signalez immédiatement les tentatives de phishing à l’équipe sécurité.
+	•	Vérifiez l’adresse de l’expéditeur avant de cliquer sur un lien.
+	•	Ne saisissez jamais vos identifiants sur un site suspect.
+
+📌 Option : Tu peux ajouter un bouton “J’ai compris” pour tracker les utilisateurs ayant pris connaissance du message.
+
+2. Page de connexion factice avec alerte après saisie des identifiants
+
+Objectif : Évaluer le niveau de risque en observant combien d’utilisateurs auraient donné leurs identifiants.
+Scénario : L’utilisateur clique sur le lien, arrive sur une fausse page de connexion ressemblant à un service interne (webmail, VPN, intranet…), entre ses identifiants, puis un message d’alerte apparaît.
+
+Avantages :
+✅ Permet de mesurer le taux de compromission (combien de personnes auraient donné leurs identifiants).
+✅ Plus impactant pour la prise de conscience.
+✅ Simule un vrai scénario d’attaque.
+
+⚠️ À prévoir :
+	•	Informer en amont les RH/DPO que les identifiants ne sont jamais stockés et qu’il s’agit uniquement d’un test de sensibilisation.
+	•	Être transparent sur l’objectif éducatif de la campagne après coup.
+
+Exemple de message après saisie des identifiants :
+
+	❌ ALERTE SÉCURITÉ
+Vous venez de saisir vos identifiants sur une page factice de phishing.
+Un attaquant aurait pu récupérer vos accès et compromettre vos données.
+Heureusement, ceci était un test interne.
+Que devez-vous retenir ?
+		•	Ne jamais entrer vos identifiants sans vérifier l’URL.
+	•	Signalez immédiatement toute page suspecte à l’équipe sécurité.
+	•	Changez votre mot de passe en cas de doute.
+
+📌 Option : Afficher un bouton “En savoir plus” redirigeant vers un guide interne de bonnes pratiques.
+
+3. Page intermédiaire avec un message éducatif et un quiz
+
+Objectif : Rendre l’apprentissage plus interactif après la simulation de phishing.
+Scénario : L’utilisateur clique sur le lien, est redirigé vers une page expliquant les dangers du phishing, puis doit répondre à un mini-quiz avant de fermer la page.
+
+Avantages :
+✅ Renforce la sensibilisation de manière ludique.
+✅ Permet d’évaluer si les messages de prévention sont bien compris.
+✅ Moins intrusif qu’une collecte d’identifiants.
+
+Exemple de message :
+
+	🛑 Vous avez cliqué sur un lien potentiellement dangereux !
+Savez-vous reconnaître un email de phishing ? Répondez à ces 3 questions pour tester vos connaissances :
+1. Comment reconnaître un lien frauduleux ?
+		•	( ) Vérifier s’il commence par “https”
+	•	( ) Survoler le lien pour voir la vraie destination
+	•	( ) Ne jamais cliquer sur un lien, même légitime
+2. Que devez-vous faire si vous recevez un mail suspect ?
+	•	( ) Le signaler immédiatement à l’équipe sécurité
+	•	( ) Répondre pour demander confirmation
+	•	( ) Ouvrir la pièce jointe pour vérifier
+3. Un mail d’un collègue vous demande de transférer des informations confidentielles. Que faire ?
+	•	( ) Lui répondre en demandant plus de précisions
+	•	( ) Vérifier l’adresse de l’expéditeur et l’appeler pour confirmer
+	•	( ) Transférer les informations immédiatement
+
+Après avoir répondu, un message de sensibilisation s’affiche avec les bonnes réponses et des conseils.
+
+4. Page de redirection vers un site interne de sensibilisation
+
+Objectif : Ne pas choquer les utilisateurs, mais les rediriger vers des ressources éducatives.
+Scénario : L’utilisateur clique et est immédiatement redirigé vers une page interne sur le phishing.
+
+Avantages :
+✅ Solution douce et non intrusive.
+✅ Peut être intégrée dans un programme de sensibilisation plus large.
+
+📌 Option : Ajouter un message pop-up avant la redirection :
+
+	“Vous avez cliqué sur un lien de phishing. Vous allez être redirigé vers notre page de sensibilisation.”
+
+Quelle option choisir ?
+
+Tout dépend de ton objectif :
+	•	Si tu veux sensibiliser sans choquer : Option 1 ou 4.
+	•	Si tu veux évaluer la vulnérabilité des employés : Option 2.
+	•	Si tu veux rendre l’exercice interactif : Option 3.
+
+📌 Idéalement, commence par une approche douce (option 1 ou 4), puis monte en intensité sur les campagnes suivantes.
+
+Tu peux aussi mixer plusieurs options en fonction des populations ciblées (ex : un message simple pour les utilisateurs lambda et une fausse page de connexion pour les équipes IT).
+
+Besoin d’aide pour concevoir les mails de phishing ou les scénarios ?

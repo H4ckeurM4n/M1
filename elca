@@ -1,0 +1,205 @@
+Voici un ensemble de règles pertinentes pour un SIEM basé sur ELK, faciles à écrire et à comprendre. Je vais t'expliquer comment chaque règle fonctionne et comment l'implémenter dans Kibana.
+
+### 1. **Tentatives de connexion échouées**
+Cette règle est essentielle pour détecter les tentatives d'accès non autorisées.
+
+#### Règle :
+Détecter un nombre anormalement élevé de tentatives de connexion échouées en un court laps de temps.
+
+#### Fonctionnement :
+L'idée est de suivre les logs qui enregistrent des échecs d'authentification et de déclencher une alerte lorsqu'un nombre seuil est dépassé.
+
+#### Exemple de création de la règle :
+1. **Index** : Choisir l'index contenant les logs de connexions, par exemple `filebeat-*` si tu utilises Filebeat pour l'ingestion.
+2. **Condition** : `event.outcome: "failure"`.
+3. **Seuil** : Si plus de 5 échecs sont détectés en moins de 5 minutes, une alerte est déclenchée.
+4. **Actions** : Notifier par e-mail, Slack, etc.
+
+---
+
+### 2. **Connexion réussie depuis une nouvelle adresse IP géographique**
+Cette règle permet de détecter les connexions qui proviennent d’une région inhabituelle, ce qui pourrait indiquer une tentative d'accès non autorisée.
+
+#### Fonctionnement :
+Lorsque quelqu'un se connecte à un système depuis une adresse IP située dans un pays différent ou une région géographique éloignée, cela peut indiquer un comportement suspect. L'alerte se déclenchera si un utilisateur se connecte depuis une localisation inhabituelle.
+
+#### Exemple de création de la règle :
+1. **Index** : Logs de connexion ou authentification.
+2. **Condition** : `event.outcome: "success"` et `source.geo.country_name` ≠ [pays autorisés].
+3. **Seuil** : Si une connexion réussie provient d'un pays ou d'une région inattendue, déclencher une alerte.
+4. **Actions** : Alerte par e-mail ou Slack.
+
+---
+
+### 3. **Modification de fichier sensible**
+Cette règle permet de surveiller la modification de fichiers critiques, tels que les configurations de systèmes ou les fichiers de log eux-mêmes.
+
+#### Fonctionnement :
+L'idée est de surveiller tout changement (modification, suppression, création) d'un fichier important. Par exemple, si `/etc/passwd` ou tout autre fichier sensible est modifié, une alerte est envoyée.
+
+#### Exemple de création de la règle :
+1. **Index** : Index de logs contenant les événements système, par exemple `auditbeat-*`.
+2. **Condition** : `event.category: "file"` ET `event.action: "modification"` ET `file.path: "/etc/passwd"`.
+3. **Seuil** : Dès qu'une modification de fichier est détectée, une alerte est déclenchée.
+4. **Actions** : Notifier les administrateurs système.
+
+---
+
+### 4. **Tentatives de connexion brute-force**
+Surveiller les tentatives de connexion brute-force (attaque où un attaquant essaie de deviner un mot de passe en testant de nombreuses combinaisons) est essentiel.
+
+#### Fonctionnement :
+Cette règle détecte un nombre inhabituellement élevé de tentatives de connexion échouées en peu de temps depuis la même adresse IP ou le même compte utilisateur.
+
+#### Exemple de création de la règle :
+1. **Index** : Logs de connexion (SSH, RDP, etc.).
+2. **Condition** : `event.outcome: "failure"` ET `source.ip` regroupe les événements.
+3. **Seuil** : Plus de 10 échecs de connexion en moins de 5 minutes depuis la même IP.
+4. **Actions** : Envoi d'une alerte et éventuellement ajout de l'adresse IP à une liste de blocage.
+
+---
+
+### 5. **Détection d’un service non autorisé démarré**
+Détecter quand un service non autorisé est démarré sur un système est crucial pour identifier les activités malveillantes.
+
+#### Fonctionnement :
+Cette règle va surveiller les événements de démarrage de service. Si un service non autorisé démarre (par exemple, un service inattendu sur un serveur critique), une alerte sera générée.
+
+#### Exemple de création de la règle :
+1. **Index** : Logs de système d'exploitation (`winlogbeat-*` pour Windows ou `auditbeat-*` pour Linux).
+2. **Condition** : `event.category: "service"` ET `event.action: "start"` ET `service.name` N'EST PAS DANS la liste des services autorisés.
+3. **Seuil** : Dès qu'un service non autorisé démarre.
+4. **Actions** : Alerte pour vérifier cette activité.
+
+---
+
+### 6. **Chiffrement de fichiers en masse (ransomware)**
+Une augmentation rapide du chiffrement de fichiers peut être le signe d'une attaque par ransomware.
+
+#### Fonctionnement :
+Cette règle détecte des opérations de chiffrement massives, ce qui pourrait signaler un ransomware en cours d'exécution.
+
+#### Exemple de création de la règle :
+1. **Index** : Logs du système de fichiers.
+2. **Condition** : `event.category: "file"` ET `event.action: "encryption"`.
+3. **Seuil** : Si plus de 50 fichiers sont chiffrés en moins de 10 minutes.
+4. **Actions** : Déclencher une alerte pour investiguer.
+
+---
+
+### 7. **Changements de privilèges utilisateurs**
+Les modifications de privilèges utilisateurs non autorisées peuvent indiquer une escalade de privilèges.
+
+#### Fonctionnement :
+Cette règle détecte les événements où les privilèges d'un utilisateur ont été modifiés, par exemple, si un utilisateur normal est soudainement ajouté à un groupe administrateur.
+
+#### Exemple de création de la règle :
+1. **Index** : Logs de gestion des utilisateurs.
+2. **Condition** : `event.category: "user"` ET `event.action: "modification"` ET `user.name` modifié.
+3. **Seuil** : Dès qu’un utilisateur est ajouté à un groupe à privilège élevé.
+4. **Actions** : Notifier les équipes de sécurité.
+
+---
+
+### Comment ça fonctionne techniquement :
+Les règles d'alertes sont créées dans Kibana et exécutées par **Elasticsearch** en recherchant des événements spécifiques. Chaque règle repose sur une condition d'événement détecté dans les logs, avec un seuil (par exemple, nombre d'occurrences en un certain laps de temps) qui déclenche l'alerte. Une fois la condition atteinte, l'action définie (e-mail, webhook, etc.) est déclenchée.
+
+En résumé :
+- **Index** : Où sont stockés tes logs.
+- **Condition** : Ce que tu cherches à détecter (par exemple, des échecs de connexion).
+- **Seuil** : Quand déclencher l’alerte (par exemple, après X événements en Y minutes).
+- **Actions** : Que faire quand l’alerte se déclenche (notifications, blocage, etc.).
+
+Si tu veux approfondir une règle ou une fonctionnalité spécifique, je peux t'aider à la configurer plus en détail.
+
+
+Les conditions dans une règle d'alerte de **Kibana** sont des critères qui doivent être remplis pour que l'alerte soit déclenchée. Pour bien comprendre comment configurer ces conditions, il est important de connaître certains concepts techniques.
+
+### 1. **Index**
+Les **index** sont les emplacements où Elasticsearch stocke les documents (données, logs). Quand tu crées une règle d’alerte, tu spécifies l’index ou les index qui contiennent les logs pertinents pour ta règle.
+
+Exemple : 
+- `filebeat-*` : Index contenant des logs ingérés par Filebeat (souvent utilisé pour les logs système).
+- `winlogbeat-*` : Index contenant les logs Windows.
+- `auditbeat-*` : Index pour les événements de sécurité système.
+
+### 2. **Document** ou **événement**
+Dans Elasticsearch, chaque entrée dans un index est appelée un **document**. Un document contient plusieurs **champs** qui décrivent une activité (par exemple, une tentative de connexion, la modification d’un fichier, etc.). Les règles se basent sur les champs de ces documents.
+
+Exemple de champs dans un document :
+- `event.category` : Catégorie de l'événement (ex. : `authentication`, `file`, `network`).
+- `event.action` : Action réalisée (ex. : `login`, `failed_login`, `modification`).
+- `source.ip` : Adresse IP source de l'événement.
+- `user.name` : Nom de l’utilisateur impliqué dans l’événement.
+
+### 3. **Conditions**
+Les conditions sont les critères de filtrage qui doivent être remplis pour qu’une alerte soit déclenchée. Ces conditions utilisent des **requêtes** pour rechercher des événements spécifiques dans les logs. Voici les composants clés des conditions :
+
+#### a) **Requête (Query)**
+Une requête est l’expression logique qui définit quelles données doivent être analysées dans l'index. C’est l’ensemble des filtres qui vont être appliqués aux champs des documents pour trouver les événements d’intérêt.
+
+Exemple de requêtes simples :
+- `event.outcome: "failure"` : Filtre tous les événements où l'issue (outcome) est un échec.
+- `user.name: "admin"` : Filtre tous les événements où l’utilisateur est "admin".
+- `source.ip: "192.168.1.1"` : Filtre tous les événements provenant de l'adresse IP `192.168.1.1`.
+
+#### b) **Opérateurs logiques**
+Les opérateurs sont utilisés pour combiner plusieurs conditions. Les opérateurs les plus courants sont :
+- **AND** : Tous les termes doivent être vrais.
+- **OR** : Au moins un des termes doit être vrai.
+- **NOT** : Le terme ne doit pas être vrai.
+
+Exemple :
+- `event.outcome: "failure" AND source.ip: "192.168.1.1"` : Filtre les événements où l'issue est un échec **et** où l'adresse IP source est `192.168.1.1`.
+- `event.outcome: "success" OR event.outcome: "failure"` : Filtre les événements avec un succès **ou** un échec.
+
+#### c) **Agrégation (Aggregation)**
+Les agrégations permettent de regrouper les événements ou de calculer des statistiques sur eux. Tu les utilises pour détecter, par exemple, un certain nombre de tentatives de connexion échouées en peu de temps.
+
+Types d'agrégations :
+- **Term Aggregation** : Regrouper les documents par la valeur d’un champ. Par exemple, regrouper par `source.ip` permet de compter combien d’événements sont associés à chaque adresse IP.
+- **Range Aggregation** : Regrouper les documents en fonction d’une plage de valeurs. Par exemple, utiliser une plage de temps (`@timestamp`) pour filtrer les événements d'une période donnée.
+
+Exemple :
+- Si tu veux détecter plus de 5 tentatives de connexion échouées d’une même adresse IP, tu utiliseras une agrégation de type "Terms" pour regrouper les événements par `source.ip`, puis compter ces événements.
+
+#### d) **Seuils (Thresholds)**
+Les seuils sont utilisés pour définir combien de fois un événement doit se produire avant que l'alerte ne soit déclenchée. Cela peut être configuré via un **nombre minimum d'occurrences** ou un **seuil basé sur une agrégation**.
+
+Exemple :
+- `event.outcome: "failure"` ET `source.ip` regroupe les événements par adresse IP, puis déclenche l'alerte si plus de 10 événements de connexion échouée sont enregistrés en moins de 5 minutes.
+
+### 4. **Fenêtre temporelle (Timeframe)**
+La fenêtre temporelle définit la période pendant laquelle les événements sont surveillés. Par exemple, tu peux définir que l’alerte doit être déclenchée si plus de 5 événements de connexion échouée surviennent **en 5 minutes**.
+
+Exemple de configuration de la fenêtre temporelle :
+- **Timeframe** : 5 minutes.
+- **Threshold** : Plus de 10 événements échoués.
+  L'alerte se déclenche si une même adresse IP a échoué plus de 10 fois à se connecter en moins de 5 minutes.
+
+### 5. **Actions**
+Une fois que la condition est remplie et que l'alerte est déclenchée, une action est effectuée. Les actions sont souvent des notifications envoyées à une équipe de sécurité.
+
+Types d'actions :
+- **E-mail** : Envoie un e-mail de notification.
+- **Slack** : Envoie un message sur un canal Slack.
+- **Webhook** : Déclenche une action automatisée via un webhook (par exemple, ajouter une IP à une liste de blocage).
+- **Indexation** : Ajouter les événements dans un nouvel index pour une analyse ultérieure.
+
+### Exemple complet de règle : Tentatives de connexion échouées
+
+1. **Index** : `filebeat-*`.
+2. **Condition** :
+   - `event.outcome: "failure"`
+   - Agrégation par `source.ip` pour regrouper les événements échoués par adresse IP.
+3. **Seuil** : Plus de 5 échecs en moins de 5 minutes.
+4. **Fenêtre temporelle** : 5 minutes.
+5. **Action** : Envoie un e-mail à l’équipe de sécurité.
+
+### Conclusion
+Pour comprendre et créer des règles efficaces dans Kibana :
+- Familiarise-toi avec les concepts d'index, de documents, de champs, et d'agrégations.
+- Utilise des requêtes et des conditions pour définir les événements spécifiques que tu veux surveiller.
+- Utilise des seuils pour déclencher des alertes uniquement quand des conditions anormales sont détectées sur une période donnée.
+
+Cela te permet d’affiner tes alertes pour surveiller les événements les plus critiques dans ton environnement et d’éviter les faux positifs. Si tu as des questions ou veux approfondir une règle spécifique, je peux t’aider à la configurer.

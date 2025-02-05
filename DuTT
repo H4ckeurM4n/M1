@@ -1,0 +1,61 @@
+📌 Objet : Compte rendu – Assistance à distance [Nom du technicien]
+
+Bonjour,
+
+Suite à mon échange avec [Nom du technicien], voici un résumé de son mode opératoire pour l’assistance à distance :
+	1.	Environnement de travail
+	•	[Nom du technicien] dispose de deux postes professionnels :
+	•	Un poste chez lui, utilisé principalement pour se connecter à distance.
+	•	Un poste dans les locaux de [ville], qui sert de machine de travail principale.
+	2.	Méthode de connexion
+	•	Depuis son poste à domicile, il se connecte avec son compte nominatif “classique”.
+	•	Il utilise RDP pour accéder à son poste dans les locaux et travailler dessus.
+	3.	Utilisation des comptes
+	•	Sur son poste local dans les locaux, il utilise son compte “syst2” pour effectuer certaines interventions (installations de pilotes, gestion des outils comme Zenwork, etc.).
+	•	Ce choix est motivé par des contraintes rencontrées avec son compte “classique” (Zenwork non fonctionnel et accès limité).
+	4.	Connexion réseau
+	•	Depuis chez lui, il utilise une connexion Wi-Fi, sans avoir rencontré de problèmes particuliers.
+
+Synthèse
+	•	PC pro à domicile : Utilisé uniquement pour se connecter en rebond via RDP sur le poste en locaux.
+	•	PC pro dans les locaux : Utilisé avec le compte “syst2” pour faciliter certaines interventions.
+
+Si besoin de précisions, je reste disponible.
+
+Cordialement,
+[Votre Nom]
+RSSI – [Nom de l’organisation]
+
+📌 Objet : Compte rendu – Assistance à distance [Nom du technicien]
+
+Bonjour,
+
+Suite à mon échange avec [Nom du technicien], voici un résumé détaillé de son mode opératoire pour l’assistance à distance.
+
+1. Environnement de travail
+	•	[Nom du technicien] dispose de deux postes professionnels :
+	•	Un poste chez lui, utilisé uniquement pour la connexion à distance.
+	•	Un poste dans les locaux de [ville], qui est sa machine principale de travail.
+
+2. Méthode de connexion – Étape par étape
+	1.	Depuis chez lui, il démarre son poste professionnel.
+	2.	Il se connecte avec son compte nominatif “classique”.
+	3.	Il ouvre une connexion RDP vers son poste dans les locaux de [ville].
+	4.	Une fois connecté sur son poste en locaux, il utilise son compte “syst2” pour effectuer ses tâches.
+
+3. Utilisation des comptes
+	•	Son compte nominatif “classique” ne lui permet pas d’effectuer certaines opérations (ex. Zenwork ne fonctionne pas).
+	•	Il utilise donc son compte “syst2” sur son poste dans les locaux pour contourner ces limitations et installer certains composants (ex. pilotes).
+
+4. Connexion réseau
+	•	Depuis son domicile, il utilise une connexion Wi-Fi et n’a jamais rencontré de problème particulier.
+
+Synthèse rapide
+
+✔ PC pro chez lui → Connexion RDP → PC pro dans les locaux → Compte “syst2” pour interventions.
+
+Si besoin de précisions, je reste disponible.
+
+Cordialement,
+[Votre Nom]
+RSSI – [Nom de l’organisation]

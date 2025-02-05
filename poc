@@ -1,0 +1,16 @@
+Voici une proposition de demande pour le service IT :
+
+---
+
+Bonjour [Nom du contact ou Service IT],
+
+Je souhaite disposer d'une machine pour effectuer des tests dans un environnement contrôlé. Voici les spécifications souhaitées :
+
+- **Usage** : Environnement de tests pour configurer et expérimenter diverses configurations de système et de sécurité.
+- **Capacité / OS** : Une machine sous Linux (Ubuntu, initialement) avec suffisamment de ressources pour supporter des virtualisations. Idéalement, une VM modulable pour adapter les OS et configurations selon les besoins, ou un poste physique sur lequel installer Proxmox pour gérer des VMs en toute autonomie.
+- **Réseau** : Connectée au réseau interne, mais avec une isolation suffisante pour éviter les impacts sur le reste de l’infrastructure, et éventuellement avec un accès Internet pour les mises à jour et téléchargements nécessaires.
+
+Merci par avance pour votre retour sur la faisabilité de cette demande. 
+
+Bien cordialement,  
+[Votre Nom]
