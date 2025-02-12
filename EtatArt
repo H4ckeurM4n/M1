@@ -1,0 +1,103 @@
+📌 Typologies des systèmes d’information isolés à intégrer dans ton mémoire
+1️⃣ Air Gap Physique (Isolation complète)
+👉 Définition
+L’air gap physique repose sur une déconnexion totale entre un système d’information et tout réseau externe. Il s’agit du modèle le plus strict, garantissant l’absence de toute connexion, filaire ou sans fil, qui pourrait permettre un échange de données avec un autre réseau.
+
+👉 Exemples
+
+Installations nucléaires : Les systèmes de contrôle des réacteurs.
+Infrastructures militaires et de défense : Réseaux classifiés (Secret Défense, OTAN...).
+Systèmes SCADA critiques : Contrôle industriel (énergie, transport).
+👉 Mécanismes de sécurité associés
+
+Interdiction de toute interconnexion temporaire.
+Contrôle strict des périphériques amovibles (stations blanches, diodes de données).
+Supervision déconnectée avec audit physique des systèmes.
+👉 Limites
+
+Mises à jour complexes nécessitant une intervention physique.
+Transferts de données lents et contraints.
+Risque de compromission via supports amovibles (ex: Stuxnet).
+2️⃣ Air Gap Logique (Isolation logicielle)
+👉 Définition
+L’air gap logique ne repose pas sur une séparation physique stricte, mais sur une isolation logicielle avancée au sein d’un même réseau ou d’une même infrastructure. Il repose sur des politiques d’accès et des mécanismes cryptographiques pour assurer l’isolement des données sensibles.
+
+👉 Exemples
+
+VLAN dédiés aux systèmes sensibles (ex. segmentation réseau des SI administratifs et industriels).
+Environnements virtualisés cloisonnés (ex. machines virtuelles avec séparation stricte).
+Chiffrement et contrôle des flux de données (ex. PKI, DRM, DLP).
+👉 Mécanismes de sécurité associés
+
+VLAN, segmentation réseau avancée.
+Chiffrement systématique des données avant transmission.
+Contrôle d’accès basé sur les rôles (RBAC) et multi-facteurs (MFA).
+👉 Limites
+
+Dépendance à des mécanismes logiciels pouvant être vulnérables.
+Possibilité de contournement via erreurs de configuration.
+Risque d’interconnexion accidentelle.
+3️⃣ Air Gap Hybride (Isolation partielle)
+👉 Définition
+L’air gap hybride combine isolement physique et logique, permettant des échanges très limités et hautement sécurisés via des passerelles strictement contrôlées.
+
+👉 Exemples
+
+Diodes de données pour échanges unidirectionnels (ex. transfert de logs vers un SIEM).
+Passerelles sécurisées à authentification forte pour un accès restreint.
+Utilisation de DMZ et de zones de sécurité cloisonnées.
+👉 Mécanismes de sécurité associés
+
+Diodes de données garantissant un flux de données à sens unique.
+Zoning et segmentation réseau renforcée.
+Authentification forte et contrôle granulaire des transferts.
+👉 Limites
+
+Coût élevé de mise en place et de maintenance.
+Besoin d’une gestion fine des interconnexions autorisées.
+Vulnérabilité si les mécanismes de cloisonnement sont mal appliqués.
+4️⃣ Air Gap Opérationnel (Isolation temporaire)
+👉 Définition
+L’air gap opérationnel repose sur un isolement temporaire, où les systèmes sont isolés en permanence sauf lorsqu’une connexion est requise pour une tâche spécifique (ex: mise à jour, synchronisation).
+
+👉 Exemples
+
+Sauvegardes déconnectées sauf lors des synchronisations planifiées.
+SI industriels autorisant des interconnexions limitées via tunnels sécurisés.
+Mise à jour ponctuelle d’un système isolé avec accès temporaire à un réseau tiers.
+👉 Mécanismes de sécurité associés
+
+Interconnexions strictement limitées dans le temps.
+Authentification forte avec validation manuelle pour toute connexion temporaire.
+Journalisation et contrôle rigoureux des accès.
+👉 Limites
+
+Risque de contamination si la connexion temporaire est compromise.
+Besoin d’un encadrement strict des sessions de connexion.
+Dépendance aux utilisateurs pour assurer la conformité des accès.
+5️⃣ Air Gap Virtuel (Isolation via virtualisation et segmentation)
+👉 Définition
+L’air gap virtuel repose sur des mécanismes avancés de segmentation logicielle pour créer des environnements isolés dans un système interconnecté.
+
+👉 Exemples
+
+Machines virtuelles cloisonnées avec chiffrement des données.
+Conteneurs isolés sans possibilité de communication externe.
+Sécurité basée sur des enclaves matérielles sécurisées (SGX, TPM).
+👉 Mécanismes de sécurité associés
+
+Virtualisation avec contrôle strict des communications inter-VM.
+Segmentation par micro-réseaux (micro-segmentation).
+Utilisation de systèmes de chiffrement avancés pour isoler les flux.
+👉 Limites
+
+Dépendance aux technologies logicielles (hyperviseurs, conteneurs).
+Complexité de mise en œuvre dans des infrastructures critiques.
+Risque de compromission via des attaques ciblant la virtualisation.
+📌 Recommandation : Structure de ton mémoire
+Dans ton État de l’Art, je te recommande d’inclure ces typologies dans un ordre progressif, du plus strict au plus flexible :
+1️⃣ Air Gap Physique (le plus strict)
+2️⃣ Air Gap Logique (isolation réseau et segmentation)
+3️⃣ Air Gap Hybride (combinaison des deux)
+4️⃣ Air Gap Opérationnel (isolement temporaire)
+5️⃣ Air Gap Virtuel (virtualisation et micro-segmentation)
