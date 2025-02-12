@@ -101,3 +101,49 @@ Dans ton État de l’Art, je te recommande d’inclure ces typologies dans un o
 3️⃣ Air Gap Hybride (combinaison des deux)
 4️⃣ Air Gap Opérationnel (isolement temporaire)
 5️⃣ Air Gap Virtuel (virtualisation et micro-segmentation)
+
+
+2.2. Typologies des systèmes isolés
+L’isolement d’un système d’information ne répond pas à un modèle unique, mais se décline en plusieurs formes selon les exigences sécuritaires, opérationnelles et réglementaires propres à chaque environnement. La mise en œuvre d’une architecture isolée repose sur un compromis entre sécurité, interopérabilité et maintenabilité, impliquant des arbitrages entre la réduction de la surface d’attaque et la nécessité d’assurer la continuité des opérations.
+
+Le choix du type d’isolement dépend de plusieurs facteurs, notamment la nature des menaces, le niveau de sensibilité des données, les impératifs d’exploitation et les contraintes réglementaires. Une isolation trop stricte peut entraver les opérations et complexifier la gestion des systèmes, tandis qu’un cloisonnement insuffisant peut introduire des vulnérabilités exploitables. Ces considérations expliquent la diversité des modèles d’isolement mis en œuvre, allant de l’air gap strict, garantissant une séparation totale, aux approches hybrides, qui intègrent des passerelles sécurisées ou des diodes de données pour des échanges contrôlés.
+
+2.2.1 Air Gap Physique (Isolation complète)
+L’air gap physique, également appelé isolation stricte, repose sur l’absence totale de connexion entre un système d’information et tout réseau externe. Aucun lien, qu’il soit filaire ou sans fil, ne relie le système isolé à un environnement non maîtrisé. Cette séparation matérielle garantit un cloisonnement maximal, réduisant considérablement la surface d’attaque et les risques d’intrusion à distance.
+
+Ce modèle est particulièrement utilisé dans les environnements où la confidentialité et l’intégrité des données sont critiques, comme les infrastructures nucléaires, les systèmes militaires et les réseaux industriels sensibles (SCADA). Il repose sur des contrôles d’accès stricts et l’usage de supports physiques pour le transfert des données, comme des clés USB sécurisées ou des diodes de données garantissant un flux unidirectionnel.
+
+Toutefois, l’absence d’interconnexion ne garantit pas une sécurité absolue. Les attaques par supports amovibles infectés (ex. Stuxnet) ou les techniques d’exfiltration via canaux cachés (signaux électromagnétiques, acoustiques ou thermiques) montrent que l’isolement physique peut être contourné. De plus, la gestion des mises à jour et de la supervision des systèmes isolés représente un défi opérationnel majeur, nécessitant des procédures rigoureuses pour éviter toute compromission accidentelle.
+
+2.2.2 Air Gap Logique (Isolation logicielle)
+L’air gap logique repose sur des mécanismes logiciels de cloisonnement visant à isoler les systèmes au sein d’une même infrastructure sans recourir à une séparation physique totale. Contrairement à l’isolement strict, cette approche permet de maintenir une certaine connectivité tout en appliquant des contrôles rigoureux sur les flux d’information.
+
+L’isolement logique est souvent mis en œuvre à travers des VLAN dédiés, des machines virtuelles cloisonnées ou des protocoles de chiffrement avancés assurant la protection des données sensibles. Il est particulièrement utilisé dans les environnements nécessitant une séparation stricte entre systèmes administratifs et industriels (IT/OT), sans compromettre l’efficacité opérationnelle.
+
+Cependant, l’efficacité de cette approche repose sur la bonne configuration des mécanismes de segmentation et des contrôles d’accès. Une erreur dans la configuration des VLAN, une mauvaise gestion des permissions ou une faille dans un pare-feu logiciel peuvent entraîner une interconnexion involontaire, augmentant le risque de compromission. L’air gap logique représente donc un compromis entre sécurité et flexibilité, mais nécessite une surveillance constante et une gestion fine des accès.
+
+2.2.3 Air Gap Hybride (Isolation partielle)
+L’air gap hybride combine isolation physique et logique afin de permettre des échanges limités et strictement contrôlés entre un système isolé et un environnement connecté. Il est conçu pour répondre aux besoins des infrastructures critiques où certaines données doivent être transférées en toute sécurité sans compromettre l’isolement global du système.
+
+Ce modèle repose sur des diodes de données permettant un transfert unidirectionnel d’informations, empêchant ainsi tout retour de flux vers le système isolé. Il est couramment utilisé pour l’envoi de logs vers un SIEM ou la mise à jour contrôlée de systèmes critiques. D’autres mécanismes, comme les passerelles sécurisées à authentification forte, permettent des connexions temporaires avec des validations strictes.
+
+Si cette approche offre un équilibre entre cloisonnement et interopérabilité, elle nécessite une gestion fine des flux autorisés et un monitoring permanent pour éviter toute dérive. De plus, son coût de mise en œuvre est souvent élevé en raison des équipements spécialisés requis et de la nécessité d’une supervision rigoureuse.
+
+2.2.4 Air Gap Opérationnel (Isolation temporaire)
+L’air gap opérationnel repose sur un isolement permanent des systèmes, interrompu uniquement lors de sessions contrôlées où une connexion temporaire est établie pour des tâches spécifiques (ex. mises à jour, synchronisation de sauvegardes, maintenance). Contrairement à l’air gap strict, cette approche autorise des interconnexions ponctuelles, mais celles-ci doivent être strictement encadrées.
+
+Ce modèle est couramment utilisé pour les systèmes de sauvegarde déconnectés, où les données critiques sont isolées sauf lors des synchronisations planifiées. Il est également appliqué dans certains environnements industriels nécessitant des connexions épisodiques via des tunnels sécurisés.
+
+Toutefois, cette approche présente des risques significatifs si les connexions temporaires ne sont pas rigoureusement contrôlées. Une infection via un accès mal sécurisé ou une faille dans un processus de mise à jour peut entraîner une compromission durable du système. Pour limiter ces risques, l’air gap opérationnel repose sur des protocoles d’authentification forte, une journalisation stricte des accès et une gestion des connexions soumise à validation manuelle.
+
+2.2.5 Air Gap Virtuel (Isolation par virtualisation et segmentation)
+L’air gap virtuel repose sur des mécanismes avancés de segmentation logicielle et de virtualisation pour isoler des environnements sensibles au sein d’un même système interconnecté. Contrairement aux approches physiques ou hybrides, il permet de cloisonner les ressources informatiques sans avoir à imposer une déconnexion totale.
+
+Ce modèle repose sur l’utilisation de machines virtuelles indépendantes, de conteneurs sécurisés ou encore d’enclaves matérielles (Intel SGX, TPM) permettant d’exécuter des processus critiques dans des espaces isolés. Il est particulièrement adapté aux environnements cloud sécurisés, aux architectures Zero Trust et aux infrastructures nécessitant une flexibilité sans compromettre l’isolement.
+
+Cependant, l’efficacité de l’air gap virtuel dépend des contrôles de segmentation et de la robustesse des technologies utilisées. Une attaque ciblant un hyperviseur (ex. VM Escape) peut compromettre plusieurs environnements cloisonnés. De plus, la gestion fine des accès et des communications entre machines virtuelles reste un défi technique nécessitant une configuration rigoureuse et une supervision continue.
+
+Conclusion et articulation avec la suite
+Les différentes typologies d’air gap reflètent une diversité de besoins et de contraintes en matière de cybersécurité. Si l’air gap strict reste la solution la plus robuste en termes de cloisonnement, les modèles hybrides, opérationnels et virtuels répondent à des impératifs d’interopérabilité et de performance.
+
+Ces distinctions sont essentielles pour comprendre les risques associés à chaque approche, qui seront analysés en détail dans le chapitre suivant consacré aux menaces et vulnérabilités pesant sur les systèmes isolés.
