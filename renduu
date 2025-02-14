@@ -1,0 +1,93 @@
+3.1 Intérêt Stratégique
+
+Les réseaux air gap sont utilisés pour protéger des infrastructures critiques contenant des données hautement sensibles. Ils jouent un rôle central dans des secteurs où la sécurité et la disponibilité des systèmes sont primordiales, tels que le nucléaire, la défense militaire, le ferroviaire ou encore les télécommunications. Une compromission de ces réseaux pourrait entraîner des catastrophes majeures, aussi bien sur le plan économique que sociétal.
+
+3.2 Menaces qui Pèsent sur les Réseaux Air Gap
+
+Bien que conçus pour être isolés, ces réseaux restent vulnérables à des attaques sophistiquées, qu’elles soient orchestrées par des États, des groupes cybercriminels ou des menaces internes.
+
+3.2.1 Espionnage et Menaces Étatiques
+
+Les États développent des cybercapacités offensives visant les infrastructures critiques adverses. Des APT (Advanced Persistent Threats), souvent liés à des services de renseignement, ciblent ces réseaux pour voler des informations stratégiques ou saboter des systèmes sensibles. Stuxnet est l’exemple le plus marquant : ce malware a infiltré des centrifugeuses nucléaires iraniennes, ralentissant considérablement le programme nucléaire du pays.
+
+3.2.2 Cybercriminalité et Modèle Économique “as-a-service”
+
+L’essor des cyberattaques en tant que service (CaaS, Crime-as-a-Service) permet à des groupes malveillants de louer des outils d’attaque sophistiqués, autrefois réservés aux États. Des ransomwares comme NotPetya ont démontré que des attaques indirectes pouvaient toucher des infrastructures critiques, paralysant des entreprises et des services essentiels.
+
+3.2.3 Menaces Internes : Erreur et Malveillance
+
+Un employé mal intentionné ou négligent peut compromettre un réseau isolé en introduisant un périphérique infecté, en contournant les procédures de sécurité ou en facilitant une intrusion externe. L’attaque Snowden, où un employé de la NSA a exfiltré des données classifiées, illustre bien le danger des menaces internes.
+
+3.3 Objectifs des Attaques : Impacts et Conséquences
+
+Une attaque contre un réseau air gap peut engendrer des répercussions graves : pertes financières, conséquences juridiques, atteinte à la réputation et impacts sociétaux majeurs.
+
+3.3.1 Impact Financier
+
+Une cyberattaque réussie peut coûter des centaines de millions d’euros. Saint-Gobain, victime de NotPetya en 2017, a perdu environ 250 millions d’euros en raison d’une interruption de son activité. D’autres exemples marquants incluent Maersk, dont les opérations maritimes ont été paralysées par le même ransomware, et Colonial Pipeline, dont le piratage en 2021 a provoqué des pénuries de carburant aux États-Unis.
+
+3.3.2 Impact Juridique
+
+Les réglementations comme la directive NIS et le RGPD imposent des obligations strictes aux entreprises pour sécuriser leurs infrastructures. Un manquement peut entraîner des sanctions financières lourdes. En 2019, British Airways a écopé d’une amende de 183 millions de livres après une violation de données qui a exposé des informations sensibles de ses clients.
+
+3.3.3 Impact Réputationnel
+
+Une compromission de réseau air gap peut gravement nuire à l’image d’une organisation. Stuxnet a exposé la vulnérabilité des infrastructures nucléaires iraniennes, révélant des failles critiques. Plus récemment, des cyberattaques contre le secteur ferroviaire (ex. attaque contre la Deutsche Bahn en Allemagne) ont mis en évidence le risque pour les transports publics. Un autre exemple est l’attaque contre Sony Pictures en 2014, qui a conduit à une fuite massive de données confidentielles et a terni l’image de l’entreprise.
+
+3.3.4 Impact Sociétal
+
+Les attaques contre les hôpitaux ou les systèmes de gestion des ressources (eau, électricité) peuvent avoir des conséquences dramatiques. L’attaque contre le NHS au Royaume-Uni en 2017 a perturbé les soins médicaux dans plusieurs hôpitaux. De même, une cyberattaque contre une station d’épuration en Floride en 2021 a failli contaminer l’eau potable avec une quantité dangereuse de produits chimiques.
+
+3.4 Techniques d’Attaque Contre les Réseaux Air Gap
+
+Les assaillants disposent de méthodes sophistiquées pour compromettre ces réseaux, qu’ils soient externes (via des signaux physiques) ou internes (via des actions humaines et logicielles).
+
+3.4.1 Attaques Externes : Exploitation des Signaux Physiques
+
+Même sans connexion réseau, des techniques permettent de récupérer ou d’infiltrer des données :
+	•	Attaques électromagnétiques (TEMPEST) : captation des ondes émises par les appareils électroniques.
+	•	Exfiltration acoustique : conversion des signaux en fréquences audibles ou infrasonores.
+	•	Attaques optiques (laser, infrarouge) : transmission de données via des vibrations ou la lumière.
+	•	Techniques thermiques : détection des variations de chaleur pour extraire des informations.
+
+➡️ Ces attaques restent souvent expérimentales, faut-il créer une sous-partie spécifique pour celles qui ont réellement abouti ?
+
+3.4.2 Attaques Internes : Failles Humaines et Logiciels Compromis
+
+L’erreur humaine est une faille exploitable par les attaquants :
+	•	Utilisation de périphériques infectés (USB, CD, imprimantes connectées) : BadUSB ou ProjectSauron ont montré comment des clés USB pouvaient injecter du code malveillant dans des systèmes isolés.
+	•	Connexion temporaire involontaire : activation d’un Wi-Fi caché ou branchement momentané à un réseau externe.
+	•	Exploitation de logiciels non mis à jour : des outils comme ShadowHammer ciblent les chaînes de mise à jour des logiciels pour injecter des malwares sur des systèmes air gap.
+
+➡️ Ces vulnérabilités démontrent l’importance de mesures de sécurisation rigoureuses, qui seront explorées dans la section suivante.
+
+Conclusion
+
+Les réseaux air gap, bien qu’isolés, ne sont pas infaillibles. Leur importance stratégique en fait des cibles privilégiées, tant pour les États que pour les cybercriminels. Les impacts d’une compromission peuvent être financiers, juridiques, réputationnels et sociétaux. De plus, des techniques avancées, allant des attaques électromagnétiques aux erreurs humaines, montrent la nécessité de renforcer continuellement leur sécurisation.
+
+3.2.4 Hacktivisme : Menaces Idéologiques et Politiques
+
+Les hacktivistes sont des groupes ou des individus qui mènent des cyberattaques motivées par des revendications politiques, sociales ou idéologiques. Contrairement aux cybercriminels motivés par l’argent ou aux États cherchant un avantage stratégique, ces attaquants visent à dénoncer, perturber ou saboter des organisations jugées contraires à leurs idéaux.
+
+Des groupes comme Anonymous, LulzSec ou encore Guacamaya ont mené des campagnes ciblant des gouvernements, des multinationales ou des infrastructures critiques. En 2015, des hacktivistes ukrainiens ont compromis le réseau électrique de leur propre pays, perturbant temporairement l’approvisionnement en électricité pour des milliers de citoyens. Plus récemment, le collectif Killnet, pro-russe, a orchestré des attaques DDoS contre des infrastructures gouvernementales et bancaires en Europe et aux États-Unis.
+
+Les attaques hacktivistes peuvent affecter les réseaux air gap via des actions indirectes :
+	•	Fuites de données sensibles (exfiltration par des insiders sympathisants à leur cause).
+	•	Déni de service en bloquant des processus liés à la maintenance des systèmes isolés.
+	•	Infection indirecte via des chaînes d’approvisionnement ou des équipements de maintenance.
+
+Leur imprévisibilité et leur capacité à mobiliser rapidement des ressources techniques rendent ces attaques particulièrement difficiles à anticiper.
+
+Sur la structuration de la partie 3.4.1
+
+Je pense qu’il serait pertinent d’ajouter une sous-partie dédiée aux attaques théoriques vs attaques réellement observées. On pourrait créer un 3.4.3 « Attaques expérimentales vs attaques avérées », où l’on listerait les concepts les plus théoriques et ceux ayant été effectivement exploités dans des attaques documentées.
+
+Exemple de structuration :
+	•	3.4.1 Attaques Externes : Exploitation des Signaux Physiques → Attaques observées dans la réalité (ex. : USB, BadBIOS, TEMPEST exploitée par des agences de renseignement, etc.).
+	•	3.4.2 Attaques Internes : Failles Humaines et Logiciels Compromis → Menaces réelles comme BadUSB, Stuxnet, ShadowHammer.
+	•	3.4.3 Limites et Réalité des Attaques Théoriques → Passage en revue des recherches académiques et des démonstrations de laboratoire (ex. exfiltration via chaleur, lumière, son, laser…).
+
+Cette dernière sous-partie permettrait de donner du recul sur la menace : certaines attaques sont médiatisées et sensationnalistes, mais leur faisabilité dans un contexte réel reste limitée (ex. piratage via ondes sonores ou fluctuations thermiques). Elle éviterait de mettre au même niveau des techniques ultra sophistiquées, accessibles uniquement à des agences de renseignement, et des attaques plus triviales comme l’introduction d’un périphérique infecté.
+
+Qu’en penses-tu ? On ajoute ce 3.4.3 ou on reste sur la structure actuelle ?
+
